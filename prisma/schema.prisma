@@ -1,0 +1,411 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+  MANAGER
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+}
+
+enum SubscriptionPlan {
+  FREE
+  BASIC
+  PROFESSIONAL
+  ENTERPRISE
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  CANCELED
+  PAST_DUE
+  TRIAL
+}
+
+model User {
+  id       String     @id @default(cuid())
+  email    String     @unique
+  password String
+  name     String
+  avatar   String?
+  role     Role       @default(USER)
+  status   UserStatus @default(ACTIVE)
+
+  orders           Order[]
+  blogPosts        BlogPost[]
+  emailVerified    Boolean    @default(false)
+  emailVerifiedAt  DateTime?
+  twoFactorEnabled Boolean    @default(false)
+  lastLoginAt      DateTime?
+
+  // Social login
+  googleId   String?
+  facebookId String?
+
+  // Profile
+  phone    String?
+  company  String?
+  position String?
+  bio      String?
+
+  // Subscription
+  subscription Subscription?
+
+  // Relations
+  refreshTokens RefreshToken[]
+  notifications Notification[]
+  activities    Activity[]
+  reviews       Review[]
+  favorites     Favorite[]
+  payments      Payment[]
+  apiKeys       ApiKey[]
+
+  // Timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+model RefreshToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  expiresAt DateTime
+  revoked   Boolean  @default(false)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("refresh_tokens")
+}
+
+model Subscription {
+  id                   String             @id @default(cuid())
+  userId               String             @unique
+  plan                 SubscriptionPlan   @default(FREE)
+  status               SubscriptionStatus @default(ACTIVE)
+  stripeCustomerId     String?
+  stripeSubscriptionId String?
+  currentPeriodStart   DateTime?
+  currentPeriodEnd     DateTime?
+  cancelAtPeriodEnd    Boolean            @default(false)
+  trialStart           DateTime?
+  trialEnd             DateTime?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("subscriptions")
+}
+
+model ApiKey {
+  id         String    @id @default(cuid())
+  key        String    @unique
+  name       String
+  userId     String
+  expiresAt  DateTime?
+  lastUsedAt DateTime?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("api_keys")
+}
+
+model Product {
+  id               String   @id @default(cuid())
+  name             String
+  slug             String   @unique
+
+  
+  description      String
+  shortDescription String?
+  price            Float
+  discountedPrice  Float?
+  images           Json // Array of image URLs
+  categoryId       String
+  tags             String[]
+  features         Json // Array of features
+  specifications   Json // Key-value pairs
+  rating           Float    @default(0)
+  reviewCount      Int      @default(0)
+  stock            Int      @default(0)
+  isFeatured       Boolean  @default(false)
+  isActive         Boolean  @default(true)
+
+  // Relations
+  category  Category   @relation(fields: [categoryId], references: [id])
+  reviews   Review[]
+  favorites Favorite[]
+
+  // Metadata
+  seoTitle       String?
+  seoDescription String?
+  seoKeywords    String[]
+
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+  orderItems OrderItem[]
+
+  @@map("products")
+}
+
+model Category {
+  id          String  @id @default(cuid())
+  name        String
+  slug        String  @unique
+  description String?
+  image       String?
+  parentId    String?
+
+  // Relations
+  parent   Category?  @relation("CategoryToCategory", fields: [parentId], references: [id])
+  children Category[] @relation("CategoryToCategory")
+  products Product[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("categories")
+}
+
+model Review {
+  id        String  @id @default(cuid())
+  rating    Int
+  comment   String?
+  userId    String
+  productId String
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("reviews")
+}
+
+model Favorite {
+  id        String @id @default(cuid())
+  userId    String
+  productId String
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, productId])
+  @@map("favorites")
+}
+
+model Order {
+  id            String        @id @default(cuid())
+  orderNumber   String        @unique
+  userId        String
+  amount        Float
+  tax           Float         @default(0)
+  shipping      Float         @default(0)
+  total         Float
+  status        OrderStatus   @default(PENDING)
+  paymentStatus PaymentStatus @default(PENDING)
+
+  // Shipping info
+  shippingAddress Json
+  billingAddress  Json
+
+  // Payment info
+  stripePaymentId String?
+  stripeSessionId String?
+
+  // Relations
+  user       User        @relation(fields: [userId], references: [id])
+  orderItems OrderItem[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("orders")
+}
+
+enum OrderStatus {
+  PENDING
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
+}
+
+model OrderItem {
+  id        String @id @default(cuid())
+  orderId   String
+  productId String
+  quantity  Int
+  price     Float
+
+  order   Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id])
+
+  createdAt DateTime @default(now())
+
+  @@map("order_items")
+}
+
+model Payment {
+  id              String        @id @default(cuid())
+  userId          String
+  amount          Float
+  currency        String        @default("usd")
+  status          PaymentStatus @default(PENDING)
+  stripePaymentId String?
+  description     String?
+
+  user User @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("payments")
+}
+
+model Notification {
+  id      String           @id @default(cuid())
+  userId  String
+  title   String
+  message String
+  type    NotificationType @default(INFO)
+  isRead  Boolean          @default(false)
+  data    Json?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@map("notifications")
+}
+
+enum NotificationType {
+  INFO
+  SUCCESS
+  WARNING
+  ERROR
+}
+
+model Activity {
+  id        String  @id @default(cuid())
+  userId    String
+  action    String
+  entity    String
+  entityId  String?
+  details   Json?
+  ipAddress String?
+  userAgent String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@map("activities")
+}
+
+model BlogPost {
+  id          String    @id @default(cuid())
+  title       String
+  slug        String    @unique
+  excerpt     String?
+  content     String
+  coverImage  String?
+  authorId    String
+  category    String?
+  tags        String[]
+  isPublished Boolean   @default(false)
+  publishedAt DateTime?
+  views       Int       @default(0)
+
+  // SEO
+  seoTitle       String?
+  seoDescription String?
+  seoKeywords    String[]
+
+  // Relations
+  author User @relation(fields: [authorId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("blog_posts")
+}
+
+model ContactMessage {
+  id       String        @id @default(cuid())
+  name     String
+  email    String
+  subject  String
+  message  String
+  status   ContactStatus @default(UNREAD)
+  response String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("contact_messages")
+}
+
+enum ContactStatus {
+  UNREAD
+  READ
+  RESPONDED
+  ARCHIVED
+}
+
+model FAQ {
+  id       String  @id @default(cuid())
+  question String
+  answer   String
+  category String
+  order    Int     @default(0)
+  isActive Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("faqs")
+}
+
+model Setting {
+  id    String @id @default(cuid())
+  key   String @unique
+  value Json
+  type  String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("settings")
+}
