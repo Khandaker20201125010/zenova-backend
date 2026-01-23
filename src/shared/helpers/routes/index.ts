@@ -1,16 +1,16 @@
 import { Router } from "express";
-import { authRoutes } from "../../modules/auth/auth.routes";
-import { userRoutes } from "../../modules/user/user.routes";
-import { productRoutes } from "../../modules/product/product.routes";
-import { orderRoutes } from "../../modules/order/order.routes";
-import { paymentRoutes } from "../../modules/payment/payment.routes";
-import notificationRoutes from "../../modules/notification/notification.routes";
-import { contactRoutes } from "../../modules/contact/contact.routes";
-import { blogRoutes } from "../../modules/blog/blog.routes";
-import { categoryRoutes } from "../../modules/category/category.routes";
-import { reviewRoutes } from "../../modules/review/review.routes";
-import { settingsRoutes } from "../../modules/settings/settings.routes";
-import { dashboardRoutes } from "../../modules/dashboard/dashboard.routes";
+import { authRoutes } from "../../../modules/auth/auth.routes";
+import { userRoutes } from "../../../modules/user/user.routes";
+import { productRoutes } from "../../../modules/product/product.routes";
+import { orderRoutes } from "../../../modules/order/order.routes";
+import { paymentRoutes } from "../../../modules/payment/payment.routes";
+import notificationRoutes from "../../../modules/notification/notification.routes";
+import { contactRoutes } from "../../../modules/contact/contact.routes";
+import { blogRoutes } from "../../../modules/blog/blog.routes";
+import { categoryRoutes } from "../../../modules/category/category.routes";
+import { reviewRoutes } from "../../../modules/review/review.routes";
+import { settingsRoutes } from "../../../modules/settings/settings.routes";
+import { dashboardRoutes } from "../../../modules/dashboard/dashboard.routes";
 
 // import other feature routes
 
