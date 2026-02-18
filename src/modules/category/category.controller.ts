@@ -110,7 +110,7 @@ export class CategoryController {
     }
   }
 
-  async getCategoryTree(req: Request, res: Response): Promise<Response> {
+  async getCategoryTree(_req: Request, res: Response): Promise<Response> {
     try {
       const result = await categoryService.getCategoryTree();
       return res.status(StatusCodes.OK).json(result);

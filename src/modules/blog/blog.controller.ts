@@ -160,7 +160,7 @@ export class BlogController {
     }
   }
 
-  async getCategories(req: Request, res: Response): Promise<Response> {
+  async getCategories(_req: Request, res: Response): Promise<Response> {
     try {
       const result = await blogService.getCategories();
       return res.status(StatusCodes.OK).json(result);
@@ -171,7 +171,7 @@ export class BlogController {
     }
   }
 
-  async getTags(req: Request, res: Response): Promise<Response> {
+  async getTags(_req: Request, res: Response): Promise<Response> {
     try {
       const result = await blogService.getTags();
       return res.status(StatusCodes.OK).json(result);

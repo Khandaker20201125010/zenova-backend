@@ -11,7 +11,7 @@ const router = Router();
 const notificationController = new NotificationController();
 
 // User routes
-router.get("/", authenticate, notificationController.getUserNotifications);
+router.get("/",  notificationController.getUserNotifications);
 router.get("/stats", authenticate, notificationController.getNotificationStats);
 router.get(
   "/unread-count",

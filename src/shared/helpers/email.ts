@@ -1,16 +1,47 @@
+// shared/helpers/email.ts
 import nodemailer from 'nodemailer';
 import { config } from '../../config';
 
+let transporter: nodemailer.Transporter;
 
-const transporter = nodemailer.createTransport({
-  host: config.EMAIL.HOST,
-  port: config.EMAIL.PORT,
-  secure: false,
-  auth: {
-    user: config.EMAIL.USER,
-    pass: config.EMAIL.PASSWORD,
-  },
-});
+const createTransporter = async () => {
+  // For development, use Ethereal if no real email config
+  if (process.env.NODE_ENV === 'development' && !config.EMAIL.HOST) {
+    // Create test account on the fly
+    const testAccount = await nodemailer.createTestAccount();
+    console.log('📧 Created Ethereal test account:');
+    console.log('Preview URL:', testAccount.web);
+    
+    return nodemailer.createTransport({
+      host: testAccount.smtp.host,
+      port: testAccount.smtp.port,
+      secure: testAccount.smtp.secure,
+      auth: {
+        user: testAccount.user,
+        pass: testAccount.pass,
+      },
+       tls: {
+    rejectUnauthorized: false // Only for development
+  }
+    });
+  }
+
+  // Use real SMTP settings
+  return nodemailer.createTransport({
+    host: config.EMAIL.HOST,
+    port: config.EMAIL.PORT,
+    secure: false,
+    auth: {
+      user: config.EMAIL.USER,
+      pass: config.EMAIL.PASSWORD,
+    },
+  });
+};
+
+// Initialize transporter
+(async () => {
+  transporter = await createTransporter();
+})();
 
 export const sendEmail = async (
   to: string,
@@ -18,15 +49,23 @@ export const sendEmail = async (
   html: string
 ): Promise<void> => {
   try {
-    await transporter.sendMail({
+    const info = await transporter.sendMail({
       from: config.EMAIL.FROM,
       to,
       subject,
       html,
     });
+
+    // If using Ethereal, log the preview URL
+    if (process.env.NODE_ENV === 'development' && info.messageId) {
+      console.log('📧 Email preview URL:', nodemailer.getTestMessageUrl(info));
+    }
   } catch (error) {
     console.error('Email sending failed:', error);
-    throw error;
+    // Don't throw error in development - registration should still succeed
+    if (process.env.NODE_ENV === 'production') {
+      throw error;
+    }
   }
 };
 

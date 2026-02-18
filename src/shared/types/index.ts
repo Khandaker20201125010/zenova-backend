@@ -51,3 +51,45 @@ export type UserRole = Role;
 export type UserStatusType = UserStatus;
 export type SubscriptionPlanType = SubscriptionPlan;
 export type SubscriptionStatusType = SubscriptionStatus;
+
+export interface OrderItemInput {
+  productId: string;
+  quantity: number;
+  price: number;
+}
+
+export interface Address {
+  street: string;
+  city: string;
+  state: string;
+  country: string;
+  postalCode: string;
+  phone: string;
+}
+
+export interface CreateOrderInput {
+  items: OrderItemInput[];
+  shippingAddress: Address;
+  billingAddress?: Address;
+  tax?: number;
+  shipping?: number;
+  notes?: string;
+}
+
+export interface UpdateOrderStatusInput {
+  status: 'PENDING' | 'PROCESSING' | 'SHIPPED' | 'DELIVERED' | 'CANCELLED' | 'REFUNDED';
+  paymentStatus?: 'PENDING' | 'PAID' | 'FAILED' | 'REFUNDED';
+  notes?: string;
+}
+
+export interface OrderQueryParams {
+  page?: number;
+  limit?: number;
+  status?: string;
+  paymentStatus?: string;
+  startDate?: string;
+  endDate?: string;
+  search?: string;
+  sortBy?: string;
+  sortOrder?: 'asc' | 'desc';
+}

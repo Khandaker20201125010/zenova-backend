@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import {  Response } from "express";
 import { StatusCodes } from "http-status-codes";
 import { NotificationService } from "./notification.service";
 import { AuthRequest } from "../../shared/types";
@@ -11,10 +11,7 @@ import { NotificationType } from "@prisma/client"; // Import Prisma enum
 const notificationService = new NotificationService();
 
 export class NotificationController {
-  async getUserNotifications(
-    req: AuthRequest,
-    res: Response,
-  ): Promise<Response> {
+   async getUserNotifications(req: AuthRequest, res: Response): Promise<Response> {
     try {
       if (!req.user) {
         return res
@@ -29,13 +26,19 @@ export class NotificationController {
         parseInt(limit as string),
       );
 
-      return res.status(StatusCodes.OK).json(result);
+      // Ensure consistent response format
+      return res.status(StatusCodes.OK).json({
+        success: true,
+        message: "Notifications retrieved successfully",
+        data: result.data, // This should contain notifications and unreadCount
+      });
     } catch (error: any) {
       return res
         .status(StatusCodes.INTERNAL_SERVER_ERROR)
         .json(errorResponse("Failed to get notifications", error.message));
     }
   }
+
 
   async markAsRead(req: AuthRequest, res: Response): Promise<Response> {
     try {

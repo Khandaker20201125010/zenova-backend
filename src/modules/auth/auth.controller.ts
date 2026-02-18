@@ -190,7 +190,7 @@ export class AuthController {
     }
   }
 
-  async demoLogin(req: Request, res: Response): Promise<Response> {
+  async demoLogin(_req: Request, res: Response): Promise<Response> {
     try {
       const result = await authService.demoLogin();
 

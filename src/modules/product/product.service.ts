@@ -48,71 +48,104 @@ export class ProductService {
         data: product,
       };
     } catch (error: any) {
-      // Fix: Add type annotation
       logger.error("Create product error:", error);
-      throw error;
+      return {
+        success: false,
+        message: "Failed to create product",
+        error: error?.message || "Unknown error",
+      };
     }
   }
 
   async getProducts(params: ProductQueryParams): Promise<ApiResponse> {
+  try {
+    console.log("========== BACKEND DEBUG ==========");
+    console.log("Received params:", JSON.stringify(params, null, 2));
+    
+    // Parse and validate query parameters
+    const page = Math.max(1, Number(params.page) || 1);
+    const limit = Math.min(100, Math.max(1, Number(params.limit) || 12));
+    const skip = (page - 1) * limit;
+
+    // Parse boolean values
+    const isFeatured = params.isFeatured === true;
+    const inStock = params.inStock === true;
+
+    // Build where clause
+    const where: any = {
+      isActive: true,
+    };
+
+    console.log("Initial where clause:", JSON.stringify(where, null, 2));
+
+    // Search filter
+    if (params.search) {
+      where.OR = [
+        { name: { contains: params.search, mode: "insensitive" } },
+        { description: { contains: params.search, mode: "insensitive" } },
+        { shortDescription: { contains: params.search, mode: "insensitive" } },
+      ];
+      console.log("Added search filter:", params.search);
+    }
+
+    // Category filter - THIS IS THE KEY PART
+    if (params.category) {
+      where.categoryId = params.category;
+      console.log("✅ Category filter applied:", { categoryId: params.category });
+    } else {
+      console.log("❌ No category filter applied");
+    }
+
+    // Price range filter
+    if (params.minPrice !== undefined || params.maxPrice !== undefined) {
+      where.price = {};
+      if (params.minPrice !== undefined) {
+        where.price.gte = Number(params.minPrice);
+        console.log("Added min price filter:", params.minPrice);
+      }
+      if (params.maxPrice !== undefined) {
+        where.price.lte = Number(params.maxPrice);
+        console.log("Added max price filter:", params.maxPrice);
+      }
+    }
+
+    // Tags filter
+    if (params.tags && params.tags.length > 0) {
+      where.tags = { hasSome: params.tags };
+      console.log("Added tags filter:", params.tags);
+    }
+
+    if (params.isFeatured !== undefined) {
+      where.isFeatured = isFeatured;
+      console.log("Added featured filter:", isFeatured);
+    }
+
+    if (params.inStock !== undefined) {
+      if (inStock) {
+        where.stock = { gt: 0 };
+      } else {
+        where.stock = { equals: 0 };
+      }
+      console.log("Added stock filter:", inStock);
+    }
+
+    console.log("Final where clause:", JSON.stringify(where, null, 2));
+
+    // Validate sort field
+    const allowedSortFields = ['price', 'rating', 'createdAt', 'name', 'updatedAt'];
+    const sortBy = allowedSortFields.includes(params.sortBy || '') 
+      ? params.sortBy 
+      : 'createdAt';
+    
+    const sortOrder = params.sortOrder === 'asc' ? 'asc' : 'desc';
+    console.log("Sort by:", sortBy, sortOrder);
+
+    // Get products
+    let products;
+    let total;
+    
     try {
-      const {
-        page = 1,
-        limit = 12,
-        search,
-        category,
-        minPrice,
-        maxPrice,
-        tags,
-        isFeatured,
-        inStock,
-        sortBy = "createdAt",
-        sortOrder = "desc",
-      } = params;
-
-      const skip = (page - 1) * limit;
-
-      // Build where clause
-      const where: any = {
-        isActive: true,
-      };
-
-      if (search) {
-        where.OR = [
-          { name: { contains: search, mode: "insensitive" } },
-          { description: { contains: search, mode: "insensitive" } },
-          { shortDescription: { contains: search, mode: "insensitive" } },
-        ];
-      }
-
-      if (category) {
-        where.categoryId = category;
-      }
-
-      if (minPrice !== undefined || maxPrice !== undefined) {
-        where.price = {};
-        if (minPrice !== undefined) where.price.gte = minPrice;
-        if (maxPrice !== undefined) where.price.lte = maxPrice;
-      }
-
-      if (tags && tags.length > 0) {
-        where.tags = { hasSome: tags };
-      }
-
-      if (isFeatured !== undefined) {
-        where.isFeatured = isFeatured;
-      }
-
-      if (inStock !== undefined) {
-        if (inStock) {
-          where.stock = { gt: 0 };
-        } else {
-          where.stock = { equals: 0 };
-        }
-      }
-
-      // Get products
-      const [products, total] = await Promise.all([
+      [products, total] = await Promise.all([
         prisma.product.findMany({
           where,
           include: {
@@ -132,30 +165,47 @@ export class ProductService {
           },
           skip,
           take: limit,
-          orderBy: { [sortBy]: sortOrder },
+          orderBy: { [sortBy!]: sortOrder },
         }),
         prisma.product.count({ where }),
       ]);
 
-      const totalPages = Math.ceil(total / limit);
+      console.log(`Found ${products.length} products matching filters`);
+      if (products.length > 0) {
+        console.log("First product categoryId:", products[0].categoryId);
+      }
 
+    } catch (dbError: any) {
+      logger.error("Database error in getProducts:", dbError);
       return {
-        success: true,
-        message: "Products retrieved successfully",
-        data: products,
-        meta: {
-          page,
-          limit,
-          total,
-          totalPages,
-        },
+        success: false,
+        message: "Database error while fetching products",
+        error: dbError?.message || "Unknown database error",
       };
-    } catch (error: any) {
-      // Fix: Add type annotation
-      logger.error("Get products error:", error);
-      throw error;
     }
+
+    const totalPages = Math.ceil(total / limit);
+
+    return {
+      success: true,
+      message: "Products retrieved successfully",
+      data: products,
+      meta: {
+        page,
+        limit,
+        total,
+        totalPages,
+      },
+    };
+  } catch (error: any) {
+    logger.error("Get products error:", error);
+    return {
+      success: false,
+      message: "Failed to get products",
+      error: error?.message || "Unknown error",
+    };
   }
+}
 
   async getProductBySlug(slug: string): Promise<ApiResponse> {
     try {
@@ -204,9 +254,12 @@ export class ProductService {
         data: product,
       };
     } catch (error: any) {
-      // Fix: Add type annotation
       logger.error("Get product by slug error:", error);
-      throw error;
+      return {
+        success: false,
+        message: "Failed to get product",
+        error: error?.message || "Unknown error",
+      };
     }
   }
 
@@ -243,9 +296,12 @@ export class ProductService {
         data: product,
       };
     } catch (error: any) {
-      // Fix: Add type annotation
       logger.error("Get product by ID error:", error);
-      throw error;
+      return {
+        success: false,
+        message: "Failed to get product",
+        error: error?.message || "Unknown error",
+      };
     }
   }
 
@@ -287,9 +343,12 @@ export class ProductService {
         data: updatedProduct,
       };
     } catch (error: any) {
-      // Fix: Add type annotation
       logger.error("Update product error:", error);
-      throw error;
+      return {
+        success: false,
+        message: "Failed to update product",
+        error: error?.message || "Unknown error",
+      };
     }
   }
 
@@ -317,9 +376,12 @@ export class ProductService {
         message: "Product deleted successfully",
       };
     } catch (error: any) {
-      // Fix: Add type annotation
       logger.error("Delete product error:", error);
-      throw error;
+      return {
+        success: false,
+        message: "Failed to delete product",
+        error: error?.message || "Unknown error",
+      };
     }
   }
 
@@ -353,9 +415,12 @@ export class ProductService {
         data: updatedProduct,
       };
     } catch (error: any) {
-      // Fix: Add type annotation
       logger.error("Upload product images error:", error);
-      throw error;
+      return {
+        success: false,
+        message: "Failed to upload images",
+        error: error?.message || "Unknown error",
+      };
     }
   }
 
@@ -389,9 +454,12 @@ export class ProductService {
         data: updatedProduct,
       };
     } catch (error: any) {
-      // Fix: Add type annotation
       logger.error("Remove product image error:", error);
-      throw error;
+      return {
+        success: false,
+        message: "Failed to remove image",
+        error: error?.message || "Unknown error",
+      };
     }
   }
 
@@ -420,7 +488,7 @@ export class ProductService {
           id: { not: productId },
           OR: [
             { categoryId: product.categoryId },
-            { tags: { hasSome: product.tags } },
+            { tags: { hasSome: product.tags || [] } },
           ],
           isActive: true,
         },
@@ -443,9 +511,12 @@ export class ProductService {
         data: relatedProducts,
       };
     } catch (error: any) {
-      // Fix: Add type annotation
       logger.error("Get related products error:", error);
-      throw error;
+      return {
+        success: false,
+        message: "Failed to get related products",
+        error: error?.message || "Unknown error",
+      };
     }
   }
 
@@ -475,9 +546,12 @@ export class ProductService {
         data: products,
       };
     } catch (error: any) {
-      // Fix: Add type annotation
       logger.error("Get featured products error:", error);
-      throw error;
+      return {
+        success: false,
+        message: "Failed to get featured products",
+        error: error?.message || "Unknown error",
+      };
     }
   }
 
@@ -528,9 +602,12 @@ export class ProductService {
         };
       }
     } catch (error: any) {
-      // Fix: Add type annotation
       logger.error("Toggle favorite error:", error);
-      throw error;
+      return {
+        success: false,
+        message: "Failed to toggle favorite",
+        error: error?.message || "Unknown error",
+      };
     }
   }
 
@@ -579,9 +656,12 @@ export class ProductService {
         },
       };
     } catch (error: any) {
-      // Fix: Add type annotation
       logger.error("Get user favorites error:", error);
-      throw error;
+      return {
+        success: false,
+        message: "Failed to get favorites",
+        error: error?.message || "Unknown error",
+      };
     }
   }
 
@@ -622,9 +702,12 @@ export class ProductService {
         data: stats,
       };
     } catch (error: any) {
-      // Fix: Add type annotation
       logger.error("Get product stats error:", error);
-      throw error;
+      return {
+        success: false,
+        message: "Failed to get product stats",
+        error: error?.message || "Unknown error",
+      };
     }
   }
 }

@@ -35,3 +35,1063 @@
 [31m  28 [39m
 [31m→ 29 const product = await prisma.product.create([39m
 [31mForeign key constraint violated on the constraint: `products_categoryId_fkey`[39m
+2026-02-13 19:57:22:5722 [31merror[39m: [31mFailed to send welcome email: Invalid login: 535 Authentication failed: The provided authorization grant is invalid, expired, or revoked[39m
+2026-02-13 20:05:04:54 [31merror[39m: [31mFailed to send welcome email: Invalid login: 535 Authentication failed: The provided authorization grant is invalid, expired, or revoked[39m
+2026-02-13 20:05:59:559 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.count()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:137:24[39m
+
+[31m  134   take: limit,[39m
+[31m  135   orderBy: { [sortBy]: sortOrder },[39m
+[31m  136 }),[39m
+[31m→ 137 prisma.product.count({[39m
+[31m        select: {[39m
+[31m          _count: {[39m
+[31m            select: {[39m
+[31m              _all: true[39m
+[31m            }[39m
+[31m          }[39m
+[31m        },[39m
+[31m        where: {[39m
+[31m          isActive: true,[39m
+[31m          isFeatured: "true"[39m
+[31m                      ~~~~~~[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 20:05:59:559 [31merror[39m: [31mGet products error: [39m
+[31mInvalid `prisma.product.count()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:137:24[39m
+
+[31m  134   take: limit,[39m
+[31m  135   orderBy: { [sortBy]: sortOrder },[39m
+[31m  136 }),[39m
+[31m→ 137 prisma.product.count({[39m
+[31m        select: {[39m
+[31m          _count: {[39m
+[31m            select: {[39m
+[31m              _all: true[39m
+[31m            }[39m
+[31m          }[39m
+[31m        },[39m
+[31m        where: {[39m
+[31m          isActive: true,[39m
+[31m          isFeatured: "true"[39m
+[31m                      ~~~~~~[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 20:05:59:559 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:116:24[39m
+
+[31m  113 [39m
+[31m  114 // Get products[39m
+[31m  115 const [products, total] = await Promise.all([[39m
+[31m→ 116   prisma.product.findMany({[39m
+[31m          where: {[39m
+[31m            isActive: true,[39m
+[31m            isFeatured: "true"[39m
+[31m                        ~~~~~~[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            category: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                slug: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                reviews: true,[39m
+[31m                favorites: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "8",[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 20:06:00:60 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:116:24[39m
+
+[31m  113 [39m
+[31m  114 // Get products[39m
+[31m  115 const [products, total] = await Promise.all([[39m
+[31m→ 116   prisma.product.findMany({[39m
+[31m          where: {[39m
+[31m            isActive: true,[39m
+[31m            isFeatured: "true"[39m
+[31m                        ~~~~~~[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            category: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                slug: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                reviews: true,[39m
+[31m                favorites: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "8",[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 20:06:00:60 [31merror[39m: [31mGet products error: [39m
+[31mInvalid `prisma.product.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:116:24[39m
+
+[31m  113 [39m
+[31m  114 // Get products[39m
+[31m  115 const [products, total] = await Promise.all([[39m
+[31m→ 116   prisma.product.findMany({[39m
+[31m          where: {[39m
+[31m            isActive: true,[39m
+[31m            isFeatured: "true"[39m
+[31m                        ~~~~~~[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            category: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                slug: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                reviews: true,[39m
+[31m                favorites: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "8",[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 20:06:00:60 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.count()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:137:24[39m
+
+[31m  134   take: limit,[39m
+[31m  135   orderBy: { [sortBy]: sortOrder },[39m
+[31m  136 }),[39m
+[31m→ 137 prisma.product.count({[39m
+[31m        select: {[39m
+[31m          _count: {[39m
+[31m            select: {[39m
+[31m              _all: true[39m
+[31m            }[39m
+[31m          }[39m
+[31m        },[39m
+[31m        where: {[39m
+[31m          isActive: true,[39m
+[31m          isFeatured: "true"[39m
+[31m                      ~~~~~~[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 20:06:02:62 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:116:24[39m
+
+[31m  113 [39m
+[31m  114 // Get products[39m
+[31m  115 const [products, total] = await Promise.all([[39m
+[31m→ 116   prisma.product.findMany({[39m
+[31m          where: {[39m
+[31m            isActive: true,[39m
+[31m            isFeatured: "true"[39m
+[31m                        ~~~~~~[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            category: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                slug: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                reviews: true,[39m
+[31m                favorites: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "8",[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 20:06:02:62 [31merror[39m: [31mGet products error: [39m
+[31mInvalid `prisma.product.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:116:24[39m
+
+[31m  113 [39m
+[31m  114 // Get products[39m
+[31m  115 const [products, total] = await Promise.all([[39m
+[31m→ 116   prisma.product.findMany({[39m
+[31m          where: {[39m
+[31m            isActive: true,[39m
+[31m            isFeatured: "true"[39m
+[31m                        ~~~~~~[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            category: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                slug: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                reviews: true,[39m
+[31m                favorites: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "8",[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 20:06:02:62 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.count()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:137:24[39m
+
+[31m  134   take: limit,[39m
+[31m  135   orderBy: { [sortBy]: sortOrder },[39m
+[31m  136 }),[39m
+[31m→ 137 prisma.product.count({[39m
+[31m        select: {[39m
+[31m          _count: {[39m
+[31m            select: {[39m
+[31m              _all: true[39m
+[31m            }[39m
+[31m          }[39m
+[31m        },[39m
+[31m        where: {[39m
+[31m          isActive: true,[39m
+[31m          isFeatured: "true"[39m
+[31m                      ~~~~~~[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 20:27:36:2736 [31merror[39m: [31mFailed to send welcome email: Invalid login: 535 Authentication failed: The provided authorization grant is invalid, expired, or revoked[39m
+2026-02-13 20:29:21:2921 [31merror[39m: [31mFailed to send welcome email: Invalid login: 535 Authentication failed: The provided authorization grant is invalid, expired, or revoked[39m
+2026-02-13 20:30:45:3045 [31merror[39m: [31mFailed to send welcome email: Invalid login: 535 Authentication failed: The provided authorization grant is invalid, expired, or revoked[39m
+2026-02-13 20:32:16:3216 [31merror[39m: [31mFailed to send welcome email: Invalid login: 535 Authentication failed: The provided authorization grant is invalid, expired, or revoked[39m
+2026-02-13 20:48:25:4825 [31merror[39m: [31mFailed to send welcome email: Invalid login: 535 Authentication failed: The provided authorization grant is invalid, expired, or revoked[39m
+2026-02-13 20:51:11:5111 [31merror[39m: [31mFailed to send welcome email: Invalid login: 535 Authentication failed: The provided authorization grant is invalid, expired, or revoked[39m
+2026-02-13 23:37:27:3727 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.count()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:137:24[39m
+
+[31m  134   take: limit,[39m
+[31m  135   orderBy: { [sortBy]: sortOrder },[39m
+[31m  136 }),[39m
+[31m→ 137 prisma.product.count({[39m
+[31m        select: {[39m
+[31m          _count: {[39m
+[31m            select: {[39m
+[31m              _all: true[39m
+[31m            }[39m
+[31m          }[39m
+[31m        },[39m
+[31m        where: {[39m
+[31m          isActive: true,[39m
+[31m          isFeatured: "true"[39m
+[31m                      ~~~~~~[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:37:27:3727 [31merror[39m: [31mGet products error: [39m
+[31mInvalid `prisma.product.count()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:137:24[39m
+
+[31m  134   take: limit,[39m
+[31m  135   orderBy: { [sortBy]: sortOrder },[39m
+[31m  136 }),[39m
+[31m→ 137 prisma.product.count({[39m
+[31m        select: {[39m
+[31m          _count: {[39m
+[31m            select: {[39m
+[31m              _all: true[39m
+[31m            }[39m
+[31m          }[39m
+[31m        },[39m
+[31m        where: {[39m
+[31m          isActive: true,[39m
+[31m          isFeatured: "true"[39m
+[31m                      ~~~~~~[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:37:27:3727 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:116:24[39m
+
+[31m  113 [39m
+[31m  114 // Get products[39m
+[31m  115 const [products, total] = await Promise.all([[39m
+[31m→ 116   prisma.product.findMany({[39m
+[31m          where: {[39m
+[31m            isActive: true,[39m
+[31m            isFeatured: "true"[39m
+[31m                        ~~~~~~[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            category: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                slug: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                reviews: true,[39m
+[31m                favorites: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "8",[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:37:28:3728 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:116:24[39m
+
+[31m  113 [39m
+[31m  114 // Get products[39m
+[31m  115 const [products, total] = await Promise.all([[39m
+[31m→ 116   prisma.product.findMany({[39m
+[31m          where: {[39m
+[31m            isActive: true,[39m
+[31m            isFeatured: "true"[39m
+[31m                        ~~~~~~[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            category: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                slug: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                reviews: true,[39m
+[31m                favorites: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "8",[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:37:28:3728 [31merror[39m: [31mGet products error: [39m
+[31mInvalid `prisma.product.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:116:24[39m
+
+[31m  113 [39m
+[31m  114 // Get products[39m
+[31m  115 const [products, total] = await Promise.all([[39m
+[31m→ 116   prisma.product.findMany({[39m
+[31m          where: {[39m
+[31m            isActive: true,[39m
+[31m            isFeatured: "true"[39m
+[31m                        ~~~~~~[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            category: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                slug: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                reviews: true,[39m
+[31m                favorites: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "8",[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:37:28:3728 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.count()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:137:24[39m
+
+[31m  134   take: limit,[39m
+[31m  135   orderBy: { [sortBy]: sortOrder },[39m
+[31m  136 }),[39m
+[31m→ 137 prisma.product.count({[39m
+[31m        select: {[39m
+[31m          _count: {[39m
+[31m            select: {[39m
+[31m              _all: true[39m
+[31m            }[39m
+[31m          }[39m
+[31m        },[39m
+[31m        where: {[39m
+[31m          isActive: true,[39m
+[31m          isFeatured: "true"[39m
+[31m                      ~~~~~~[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:37:30:3730 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:116:24[39m
+
+[31m  113 [39m
+[31m  114 // Get products[39m
+[31m  115 const [products, total] = await Promise.all([[39m
+[31m→ 116   prisma.product.findMany({[39m
+[31m          where: {[39m
+[31m            isActive: true,[39m
+[31m            isFeatured: "true"[39m
+[31m                        ~~~~~~[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            category: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                slug: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                reviews: true,[39m
+[31m                favorites: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "8",[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:37:30:3730 [31merror[39m: [31mGet products error: [39m
+[31mInvalid `prisma.product.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:116:24[39m
+
+[31m  113 [39m
+[31m  114 // Get products[39m
+[31m  115 const [products, total] = await Promise.all([[39m
+[31m→ 116   prisma.product.findMany({[39m
+[31m          where: {[39m
+[31m            isActive: true,[39m
+[31m            isFeatured: "true"[39m
+[31m                        ~~~~~~[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            category: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                slug: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                reviews: true,[39m
+[31m                favorites: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "8",[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:37:30:3730 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.count()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:137:24[39m
+
+[31m  134   take: limit,[39m
+[31m  135   orderBy: { [sortBy]: sortOrder },[39m
+[31m  136 }),[39m
+[31m→ 137 prisma.product.count({[39m
+[31m        select: {[39m
+[31m          _count: {[39m
+[31m            select: {[39m
+[31m              _all: true[39m
+[31m            }[39m
+[31m          }[39m
+[31m        },[39m
+[31m        where: {[39m
+[31m          isActive: true,[39m
+[31m          isFeatured: "true"[39m
+[31m                      ~~~~~~[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:37:37:3737 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:116:24[39m
+
+[31m  113 [39m
+[31m  114 // Get products[39m
+[31m  115 const [products, total] = await Promise.all([[39m
+[31m→ 116   prisma.product.findMany({[39m
+[31m          where: {[39m
+[31m            isActive: true,[39m
+[31m            isFeatured: "true"[39m
+[31m                        ~~~~~~[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            category: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                slug: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                reviews: true,[39m
+[31m                favorites: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "8",[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:37:37:3737 [31merror[39m: [31mGet products error: [39m
+[31mInvalid `prisma.product.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:116:24[39m
+
+[31m  113 [39m
+[31m  114 // Get products[39m
+[31m  115 const [products, total] = await Promise.all([[39m
+[31m→ 116   prisma.product.findMany({[39m
+[31m          where: {[39m
+[31m            isActive: true,[39m
+[31m            isFeatured: "true"[39m
+[31m                        ~~~~~~[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            category: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                slug: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                reviews: true,[39m
+[31m                favorites: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "8",[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:37:37:3737 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.count()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:137:24[39m
+
+[31m  134   take: limit,[39m
+[31m  135   orderBy: { [sortBy]: sortOrder },[39m
+[31m  136 }),[39m
+[31m→ 137 prisma.product.count({[39m
+[31m        select: {[39m
+[31m          _count: {[39m
+[31m            select: {[39m
+[31m              _all: true[39m
+[31m            }[39m
+[31m          }[39m
+[31m        },[39m
+[31m        where: {[39m
+[31m          isActive: true,[39m
+[31m          isFeatured: "true"[39m
+[31m                      ~~~~~~[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:37:38:3738 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.count()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:137:24[39m
+
+[31m  134   take: limit,[39m
+[31m  135   orderBy: { [sortBy]: sortOrder },[39m
+[31m  136 }),[39m
+[31m→ 137 prisma.product.count({[39m
+[31m        select: {[39m
+[31m          _count: {[39m
+[31m            select: {[39m
+[31m              _all: true[39m
+[31m            }[39m
+[31m          }[39m
+[31m        },[39m
+[31m        where: {[39m
+[31m          isActive: true,[39m
+[31m          isFeatured: "true"[39m
+[31m                      ~~~~~~[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:37:38:3738 [31merror[39m: [31mGet products error: [39m
+[31mInvalid `prisma.product.count()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:137:24[39m
+
+[31m  134   take: limit,[39m
+[31m  135   orderBy: { [sortBy]: sortOrder },[39m
+[31m  136 }),[39m
+[31m→ 137 prisma.product.count({[39m
+[31m        select: {[39m
+[31m          _count: {[39m
+[31m            select: {[39m
+[31m              _all: true[39m
+[31m            }[39m
+[31m          }[39m
+[31m        },[39m
+[31m        where: {[39m
+[31m          isActive: true,[39m
+[31m          isFeatured: "true"[39m
+[31m                      ~~~~~~[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:37:38:3738 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:116:24[39m
+
+[31m  113 [39m
+[31m  114 // Get products[39m
+[31m  115 const [products, total] = await Promise.all([[39m
+[31m→ 116   prisma.product.findMany({[39m
+[31m          where: {[39m
+[31m            isActive: true,[39m
+[31m            isFeatured: "true"[39m
+[31m                        ~~~~~~[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            category: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                slug: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                reviews: true,[39m
+[31m                favorites: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "8",[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:37:59:3759 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.count()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:137:24[39m
+
+[31m  134   take: limit,[39m
+[31m  135   orderBy: { [sortBy]: sortOrder },[39m
+[31m  136 }),[39m
+[31m→ 137 prisma.product.count({[39m
+[31m        select: {[39m
+[31m          _count: {[39m
+[31m            select: {[39m
+[31m              _all: true[39m
+[31m            }[39m
+[31m          }[39m
+[31m        },[39m
+[31m        where: {[39m
+[31m          isActive: true,[39m
+[31m          isFeatured: "true"[39m
+[31m                      ~~~~~~[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:37:59:3759 [31merror[39m: [31mGet products error: [39m
+[31mInvalid `prisma.product.count()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:137:24[39m
+
+[31m  134   take: limit,[39m
+[31m  135   orderBy: { [sortBy]: sortOrder },[39m
+[31m  136 }),[39m
+[31m→ 137 prisma.product.count({[39m
+[31m        select: {[39m
+[31m          _count: {[39m
+[31m            select: {[39m
+[31m              _all: true[39m
+[31m            }[39m
+[31m          }[39m
+[31m        },[39m
+[31m        where: {[39m
+[31m          isActive: true,[39m
+[31m          isFeatured: "true"[39m
+[31m                      ~~~~~~[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:37:59:3759 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:116:24[39m
+
+[31m  113 [39m
+[31m  114 // Get products[39m
+[31m  115 const [products, total] = await Promise.all([[39m
+[31m→ 116   prisma.product.findMany({[39m
+[31m          where: {[39m
+[31m            isActive: true,[39m
+[31m            isFeatured: "true"[39m
+[31m                        ~~~~~~[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            category: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                slug: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                reviews: true,[39m
+[31m                favorites: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "8",[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:38:00:380 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:116:24[39m
+
+[31m  113 [39m
+[31m  114 // Get products[39m
+[31m  115 const [products, total] = await Promise.all([[39m
+[31m→ 116   prisma.product.findMany({[39m
+[31m          where: {[39m
+[31m            isActive: true,[39m
+[31m            isFeatured: "true"[39m
+[31m                        ~~~~~~[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            category: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                slug: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                reviews: true,[39m
+[31m                favorites: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "8",[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:38:00:380 [31merror[39m: [31mGet products error: [39m
+[31mInvalid `prisma.product.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:116:24[39m
+
+[31m  113 [39m
+[31m  114 // Get products[39m
+[31m  115 const [products, total] = await Promise.all([[39m
+[31m→ 116   prisma.product.findMany({[39m
+[31m          where: {[39m
+[31m            isActive: true,[39m
+[31m            isFeatured: "true"[39m
+[31m                        ~~~~~~[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            category: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                slug: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                reviews: true,[39m
+[31m                favorites: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "8",[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:38:00:380 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.count()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:137:24[39m
+
+[31m  134   take: limit,[39m
+[31m  135   orderBy: { [sortBy]: sortOrder },[39m
+[31m  136 }),[39m
+[31m→ 137 prisma.product.count({[39m
+[31m        select: {[39m
+[31m          _count: {[39m
+[31m            select: {[39m
+[31m              _all: true[39m
+[31m            }[39m
+[31m          }[39m
+[31m        },[39m
+[31m        where: {[39m
+[31m          isActive: true,[39m
+[31m          isFeatured: "true"[39m
+[31m                      ~~~~~~[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:38:02:382 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.count()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:137:24[39m
+
+[31m  134   take: limit,[39m
+[31m  135   orderBy: { [sortBy]: sortOrder },[39m
+[31m  136 }),[39m
+[31m→ 137 prisma.product.count({[39m
+[31m        select: {[39m
+[31m          _count: {[39m
+[31m            select: {[39m
+[31m              _all: true[39m
+[31m            }[39m
+[31m          }[39m
+[31m        },[39m
+[31m        where: {[39m
+[31m          isActive: true,[39m
+[31m          isFeatured: "true"[39m
+[31m                      ~~~~~~[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:38:02:382 [31merror[39m: [31mGet products error: [39m
+[31mInvalid `prisma.product.count()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:137:24[39m
+
+[31m  134   take: limit,[39m
+[31m  135   orderBy: { [sortBy]: sortOrder },[39m
+[31m  136 }),[39m
+[31m→ 137 prisma.product.count({[39m
+[31m        select: {[39m
+[31m          _count: {[39m
+[31m            select: {[39m
+[31m              _all: true[39m
+[31m            }[39m
+[31m          }[39m
+[31m        },[39m
+[31m        where: {[39m
+[31m          isActive: true,[39m
+[31m          isFeatured: "true"[39m
+[31m                      ~~~~~~[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-13 23:38:02:382 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:116:24[39m
+
+[31m  113 [39m
+[31m  114 // Get products[39m
+[31m  115 const [products, total] = await Promise.all([[39m
+[31m→ 116   prisma.product.findMany({[39m
+[31m          where: {[39m
+[31m            isActive: true,[39m
+[31m            isFeatured: "true"[39m
+[31m                        ~~~~~~[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            category: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                slug: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                reviews: true,[39m
+[31m                favorites: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "8",[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `isFeatured`: Invalid value provided. Expected BoolFilter or Boolean, provided String.[39m
+2026-02-14 17:45:53:4553 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:33:44[39m
+
+[31m  30   finalName = `${data.name} (${new Date().toLocaleDateString()})`;[39m
+[31m  31 }[39m
+[31m  32 [39m
+[31m→ 33 const product = await prisma.product.create([39m
+[31mForeign key constraint violated on the constraint: `products_categoryId_fkey`[39m
+2026-02-14 17:45:53:4553 [31merror[39m: [31mCreate product error: [39m
+[31mInvalid `prisma.product.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:33:44[39m
+
+[31m  30   finalName = `${data.name} (${new Date().toLocaleDateString()})`;[39m
+[31m  31 }[39m
+[31m  32 [39m
+[31m→ 33 const product = await prisma.product.create([39m
+[31mForeign key constraint violated on the constraint: `products_categoryId_fkey`[39m
+2026-02-14 17:57:14:5714 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:33:44[39m
+
+[31m  30   finalName = `${data.name} (${new Date().toLocaleDateString()})`;[39m
+[31m  31 }[39m
+[31m  32 [39m
+[31m→ 33 const product = await prisma.product.create([39m
+[31mForeign key constraint violated on the constraint: `products_categoryId_fkey`[39m
+2026-02-14 17:57:14:5714 [31merror[39m: [31mCreate product error: [39m
+[31mInvalid `prisma.product.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:33:44[39m
+
+[31m  30   finalName = `${data.name} (${new Date().toLocaleDateString()})`;[39m
+[31m  31 }[39m
+[31m  32 [39m
+[31m→ 33 const product = await prisma.product.create([39m
+[31mForeign key constraint violated on the constraint: `products_categoryId_fkey`[39m
+2026-02-14 17:57:24:5724 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:33:44[39m
+
+[31m  30   finalName = `${data.name} (${new Date().toLocaleDateString()})`;[39m
+[31m  31 }[39m
+[31m  32 [39m
+[31m→ 33 const product = await prisma.product.create([39m
+[31mForeign key constraint violated on the constraint: `products_categoryId_fkey`[39m
+2026-02-14 17:57:24:5724 [31merror[39m: [31mCreate product error: [39m
+[31mInvalid `prisma.product.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:33:44[39m
+
+[31m  30   finalName = `${data.name} (${new Date().toLocaleDateString()})`;[39m
+[31m  31 }[39m
+[31m  32 [39m
+[31m→ 33 const product = await prisma.product.create([39m
+[31mForeign key constraint violated on the constraint: `products_categoryId_fkey`[39m
+2026-02-14 17:59:15:5915 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:33:44[39m
+
+[31m  30   finalName = `${data.name} (${new Date().toLocaleDateString()})`;[39m
+[31m  31 }[39m
+[31m  32 [39m
+[31m→ 33 const product = await prisma.product.create([39m
+[31mForeign key constraint violated on the constraint: `products_categoryId_fkey`[39m
+2026-02-14 17:59:15:5915 [31merror[39m: [31mCreate product error: [39m
+[31mInvalid `prisma.product.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:33:44[39m
+
+[31m  30   finalName = `${data.name} (${new Date().toLocaleDateString()})`;[39m
+[31m  31 }[39m
+[31m  32 [39m
+[31m→ 33 const product = await prisma.product.create([39m
+[31mForeign key constraint violated on the constraint: `products_categoryId_fkey`[39m

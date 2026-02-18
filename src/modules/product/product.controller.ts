@@ -27,16 +27,38 @@ export class ProductController {
     }
   }
 
-  async getProducts(req: Request, res: Response): Promise<Response> {
-    try {
-      const result = await productService.getProducts(req.query);
-      return res.status(StatusCodes.OK).json(result);
-    } catch (error: any) {
-      return res
-        .status(StatusCodes.INTERNAL_SERVER_ERROR)
-        .json(errorResponse("Failed to get products", error.message));
+async getProducts(req: Request, res: Response): Promise<Response> {
+  try {
+    // Extract params from either flat or nested structure
+    const queryParams: any = {};
+    
+    // Check if params are nested under 'params' key
+    if (req.query.params) {
+      // If params are sent as a nested object
+      Object.assign(queryParams, req.query.params);
+    } else {
+      // If params are sent flat
+      Object.assign(queryParams, req.query);
     }
+    
+    // Also check for params[page] style
+    Object.keys(req.query).forEach(key => {
+      const match = key.match(/^params\[(.*)\]$/);
+      if (match) {
+        queryParams[match[1]] = req.query[key];
+      }
+    });
+    
+    console.log("Extracted query params:", queryParams);
+    
+    const result = await productService.getProducts(queryParams);
+    return res.status(StatusCodes.OK).json(result);
+  } catch (error: any) {
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json(errorResponse("Failed to get products", error.message));
   }
+}
 
   async getProductBySlug(req: Request, res: Response): Promise<Response> {
     try {

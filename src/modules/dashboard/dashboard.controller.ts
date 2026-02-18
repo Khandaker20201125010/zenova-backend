@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import {  Response } from "express";
 import { StatusCodes } from "http-status-codes";
 import { DashboardService } from "./dashboard.service";
 import { AuthRequest } from "../../shared/types";

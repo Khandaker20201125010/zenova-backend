@@ -1,8 +1,14 @@
+// order.service.ts
 import { config } from "../../config";
 import { stripe } from "../../config/stripe";
 import logger from "../../shared/helpers/logger";
 import { prisma } from "../../shared/helpers/prisma";
-import { ApiResponse } from "../../shared/types";
+import { 
+  ApiResponse, 
+  CreateOrderInput, 
+  OrderQueryParams, 
+  UpdateOrderStatusInput 
+} from "../../shared/types";
 
 export class OrderService {
   async createOrder(
@@ -12,7 +18,11 @@ export class OrderService {
     try {
       // Validate products and calculate totals
       let subtotal = 0;
-      const orderItems = [];
+      const orderItems: Array<{
+        productId: string;
+        quantity: number;
+        price: number;
+      }> = [];
 
       for (const item of data.items) {
         const product = await prisma.product.findUnique({
@@ -49,7 +59,7 @@ export class OrderService {
       const orderNumber = `ORD-${Date.now()}-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
 
       // Create order
-      const order = await prisma.$transaction(async (tx) => {
+      const order = await prisma.$transaction(async (tx: any) => {
         // Update product stock
         for (const item of data.items) {
           await tx.product.update({
@@ -509,7 +519,11 @@ export class OrderService {
       const order = await prisma.order.findUnique({
         where: { id: orderId },
         include: {
-          user: true,
+          user: {
+            include: {
+              subscription: true,
+            },
+          },
           orderItems: {
             include: {
               product: true,
@@ -566,18 +580,41 @@ export class OrderService {
         });
       }
 
+      // Helper function to convert Prisma Json to string array
+      const getProductImages = (images: any): string[] => {
+        if (!images) return [];
+        
+        if (Array.isArray(images)) {
+          // Filter out non-string values and ensure they're strings
+          return images.filter(img => typeof img === 'string').map(img => img as string);
+        }
+        
+        // If it's a string, try to parse it as JSON
+        if (typeof images === 'string') {
+          try {
+            const parsed = JSON.parse(images);
+            if (Array.isArray(parsed)) {
+              return parsed.filter(img => typeof img === 'string');
+            }
+          } catch {
+            // If it's not valid JSON but is a string, return it as an array
+            return [images];
+          }
+        }
+        
+        return [];
+      };
+
       // Create checkout session
       const session = await stripe.checkout.sessions.create({
         customer: customerId,
         payment_method_types: ["card"],
-        line_items: order.orderItems.map((item: any) => ({
+        line_items: order.orderItems.map((item) => ({
           price_data: {
             currency: "usd",
             product_data: {
               name: item.product.name,
-              images: item.product.images
-                ? (item.product.images as string[]).slice(0, 1)
-                : [],
+              images: getProductImages(item.product.images).slice(0, 1),
             },
             unit_amount: Math.round(item.price * 100),
           },
@@ -592,7 +629,7 @@ export class OrderService {
         },
       });
 
-      // Update order with Stripe session ID
+      // Update order with Stripe session ID using the correct unique identifier
       await prisma.order.update({
         where: { id: orderId },
         data: { stripeSessionId: session.id },
@@ -626,11 +663,24 @@ export class OrderService {
       switch (event.type) {
         case "checkout.session.completed": {
           const session = event.data.object as any;
+          
+          if (!session.id) {
+            throw new Error("Session ID is missing");
+          }
 
           await prisma.$transaction(async (tx: any) => {
+            // First find the order by stripeSessionId
+            const order = await tx.order.findUnique({
+              where: { stripeSessionId: session.id },
+            });
+
+            if (!order) {
+              throw new Error(`Order not found for session: ${session.id}`);
+            }
+
             // Update order payment status
             await tx.order.update({
-              where: { stripeSessionId: session.id },
+              where: { id: order.id },
               data: {
                 paymentStatus: "PAID",
                 stripePaymentId: session.payment_intent,
@@ -640,23 +690,23 @@ export class OrderService {
             // Create payment record
             await tx.payment.create({
               data: {
-                userId: session.metadata.userId,
+                userId: session.metadata?.userId || order.userId,
                 amount: session.amount_total / 100,
                 currency: session.currency,
                 status: "PAID",
                 stripePaymentId: session.payment_intent,
-                description: `Payment for order #${session.metadata.orderId}`,
+                description: `Payment for order #${order.orderNumber}`,
               },
             });
 
             // Create notification
             await tx.notification.create({
               data: {
-                userId: session.metadata.userId,
+                userId: session.metadata?.userId || order.userId,
                 title: "Payment Successful",
-                message: `Payment for order #${session.metadata.orderId} was successful.`,
+                message: `Payment for order #${order.orderNumber} was successful.`,
                 type: "SUCCESS",
-                data: { orderId: session.metadata.orderId },
+                data: { orderId: order.id },
               },
             });
           });
@@ -666,12 +716,23 @@ export class OrderService {
         case "checkout.session.expired": {
           const session = event.data.object as any;
 
-          await prisma.order.update({
+          if (!session.id) {
+            throw new Error("Session ID is missing");
+          }
+
+          // First find the order by stripeSessionId
+          const order = await prisma.order.findFirst({
             where: { stripeSessionId: session.id },
-            data: {
-              paymentStatus: "FAILED",
-            },
           });
+
+          if (order) {
+            await prisma.order.update({
+              where: { id: order.id },
+              data: {
+                paymentStatus: "FAILED",
+              },
+            });
+          }
           break;
         }
       }

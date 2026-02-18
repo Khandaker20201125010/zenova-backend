@@ -1,0 +1,71 @@
+import { z } from 'zod';
+export declare const updateSettingSchema: z.ZodObject<{
+    body: z.ZodObject<{
+        key: z.ZodString;
+        value: z.ZodAny;
+        type: z.ZodOptional<z.ZodString>;
+    }, z.core.$strip>;
+}, z.core.$strip>;
+export declare const updateSystemSettingsSchema: z.ZodObject<{
+    body: z.ZodObject<{
+        site: z.ZodOptional<z.ZodObject<{
+            name: z.ZodOptional<z.ZodString>;
+            description: z.ZodOptional<z.ZodString>;
+            logo: z.ZodOptional<z.ZodString>;
+            favicon: z.ZodOptional<z.ZodString>;
+            theme: z.ZodOptional<z.ZodEnum<{
+                auto: "auto";
+                light: "light";
+                dark: "dark";
+            }>>;
+            language: z.ZodOptional<z.ZodString>;
+            timezone: z.ZodOptional<z.ZodString>;
+            currency: z.ZodOptional<z.ZodString>;
+        }, z.core.$strip>>;
+        email: z.ZodOptional<z.ZodObject<{
+            enabled: z.ZodOptional<z.ZodBoolean>;
+            fromName: z.ZodOptional<z.ZodString>;
+            fromEmail: z.ZodOptional<z.ZodString>;
+            smtpHost: z.ZodOptional<z.ZodString>;
+            smtpPort: z.ZodOptional<z.ZodNumber>;
+            smtpUser: z.ZodOptional<z.ZodString>;
+            smtpPass: z.ZodOptional<z.ZodString>;
+        }, z.core.$strip>>;
+        payment: z.ZodOptional<z.ZodObject<{
+            stripeEnabled: z.ZodOptional<z.ZodBoolean>;
+            stripePublicKey: z.ZodOptional<z.ZodString>;
+            stripeSecretKey: z.ZodOptional<z.ZodString>;
+            currency: z.ZodOptional<z.ZodString>;
+        }, z.core.$strip>>;
+        storage: z.ZodOptional<z.ZodObject<{
+            provider: z.ZodOptional<z.ZodString>;
+            cloudinaryCloudName: z.ZodOptional<z.ZodString>;
+            cloudinaryApiKey: z.ZodOptional<z.ZodString>;
+            cloudinaryApiSecret: z.ZodOptional<z.ZodString>;
+        }, z.core.$strip>>;
+        social: z.ZodOptional<z.ZodObject<{
+            facebook: z.ZodOptional<z.ZodString>;
+            twitter: z.ZodOptional<z.ZodString>;
+            instagram: z.ZodOptional<z.ZodString>;
+            linkedin: z.ZodOptional<z.ZodString>;
+            github: z.ZodOptional<z.ZodString>;
+        }, z.core.$strip>>;
+        analytics: z.ZodOptional<z.ZodObject<{
+            googleAnalyticsId: z.ZodOptional<z.ZodString>;
+            facebookPixelId: z.ZodOptional<z.ZodString>;
+        }, z.core.$strip>>;
+        security: z.ZodOptional<z.ZodObject<{
+            requireEmailVerification: z.ZodOptional<z.ZodBoolean>;
+            requireStrongPasswords: z.ZodOptional<z.ZodBoolean>;
+            maxLoginAttempts: z.ZodOptional<z.ZodNumber>;
+            sessionTimeout: z.ZodOptional<z.ZodNumber>;
+        }, z.core.$strip>>;
+        features: z.ZodOptional<z.ZodObject<{
+            enableBlog: z.ZodOptional<z.ZodBoolean>;
+            enableReviews: z.ZodOptional<z.ZodBoolean>;
+            enableNotifications: z.ZodOptional<z.ZodBoolean>;
+            enableTwoFactor: z.ZodOptional<z.ZodBoolean>;
+        }, z.core.$strip>>;
+    }, z.core.$strip>;
+}, z.core.$strip>;
+//# sourceMappingURL=settings.validation.d.ts.map
