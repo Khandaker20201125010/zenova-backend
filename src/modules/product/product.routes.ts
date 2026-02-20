@@ -16,6 +16,7 @@ router.get("/", productController.getProducts);
 router.get("/featured", productController.getFeaturedProducts);
 router.get("/slug/:slug", productController.getProductBySlug);
 router.get("/:id/related", productController.getRelatedProducts);
+router.get("/tags", productController.getAllTags);
 
 // Protected routes
 router.get("/favorites", authenticate, productController.getUserFavorites);
@@ -71,5 +72,6 @@ router.delete(
   authorize("ADMIN"),
   productController.removeProductImage,
 );
+
 
 export const productRoutes = router;

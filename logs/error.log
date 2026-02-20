@@ -1095,3 +1095,1544 @@
 [31m  32 [39m
 [31m→ 33 const product = await prisma.product.create([39m
 [31mForeign key constraint violated on the constraint: `products_categoryId_fkey`[39m
+2026-02-19 22:18:11:1811 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-19 22:18:11:1811 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-19 22:18:11:1811 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-19 22:18:11:1811 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-19 23:27:49:2749 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-19 23:27:49:2749 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-19 23:27:49:2749 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-19 23:27:49:2749 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-19 23:33:36:3336 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-19 23:33:36:3336 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-19 23:33:36:3336 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-19 23:33:36:3336 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-19 23:52:40:5240 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-19 23:52:40:5240 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-19 23:52:40:5240 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-19 23:52:40:5240 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-19 23:54:04:544 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-19 23:54:04:544 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-19 23:54:04:544 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-19 23:54:04:544 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 03:42:49:4249 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 03:42:49:4249 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 03:42:49:4249 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 03:42:49:4249 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 04:00:11:011 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 04:00:11:011 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 04:00:11:011 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 04:00:11:011 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 04:00:29:029 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 04:00:29:029 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 04:00:36:036 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 04:00:36:036 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 04:00:36:036 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 04:00:36:036 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 04:02:42:242 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 04:02:42:242 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 04:02:42:242 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 04:02:42:242 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 04:19:28:1928 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.refreshToken.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\auth\auth.services.ts:349:33[39m
+
+[31m  346 });[39m
+[31m  347 [39m
+[31m  348 // Save new refresh token[39m
+[31m→ 349 await prisma.refreshToken.create([39m
+[31mUnique constraint failed on the fields: (`token`)[39m
+2026-02-20 04:19:28:1928 [31merror[39m: [31mRefresh token error: [39m
+[31mInvalid `prisma.refreshToken.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\auth\auth.services.ts:349:33[39m
+
+[31m  346 });[39m
+[31m  347 [39m
+[31m  348 // Save new refresh token[39m
+[31m→ 349 await prisma.refreshToken.create([39m
+[31mUnique constraint failed on the fields: (`token`)[39m
+2026-02-20 04:20:22:2022 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.refreshToken.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\auth\auth.services.ts:349:33[39m
+
+[31m  346 });[39m
+[31m  347 [39m
+[31m  348 // Save new refresh token[39m
+[31m→ 349 await prisma.refreshToken.create([39m
+[31mUnique constraint failed on the fields: (`token`)[39m
+2026-02-20 04:20:22:2022 [31merror[39m: [31mRefresh token error: [39m
+[31mInvalid `prisma.refreshToken.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\auth\auth.services.ts:349:33[39m
+
+[31m  346 });[39m
+[31m  347 [39m
+[31m  348 // Save new refresh token[39m
+[31m→ 349 await prisma.refreshToken.create([39m
+[31mUnique constraint failed on the fields: (`token`)[39m
+2026-02-20 04:24:28:2428 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 04:24:28:2428 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 04:24:29:2429 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 04:24:29:2429 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 05:21:47:2147 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 05:21:47:2147 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 05:21:47:2147 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 05:21:47:2147 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 05:27:50:2750 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 05:27:50:2750 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 05:27:50:2750 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 05:27:50:2750 [31merror[39m: [31mGet blog posts error: [39m
+[31mInvalid `prisma.blogPost.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\blog\blog.service.ts:118:25[39m
+
+[31m  115 [39m
+[31m  116 // Get posts[39m
+[31m  117 const [posts, total] = await Promise.all([[39m
+[31m→ 118   prisma.blogPost.findMany({[39m
+[31m          where: {[39m
+[31m            isPublished: true[39m
+[31m          },[39m
+[31m          include: {[39m
+[31m            author: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                avatar: true,[39m
+[31m                position: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "12",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-02-20 22:15:04:154 [31merror[39m: [31mGet products error: sortBy is not defined[39m
+2026-02-20 22:15:10:1510 [31merror[39m: [31mGet products error: sortBy is not defined[39m
+2026-02-20 22:15:11:1511 [31merror[39m: [31mGet products error: sortBy is not defined[39m
+2026-02-20 22:15:12:1512 [31merror[39m: [31mGet products error: sortBy is not defined[39m
+2026-02-20 22:15:14:1514 [31merror[39m: [31mGet products error: sortBy is not defined[39m

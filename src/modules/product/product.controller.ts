@@ -27,42 +27,30 @@ export class ProductController {
     }
   }
 
-async getProducts(req: Request, res: Response): Promise<Response> {
-  try {
-    // Extract params from either flat or nested structure
-    const queryParams: any = {};
-    
-    // Check if params are nested under 'params' key
-    if (req.query.params) {
-      // If params are sent as a nested object
-      Object.assign(queryParams, req.query.params);
-    } else {
-      // If params are sent flat
-      Object.assign(queryParams, req.query);
+  async getProducts(req: Request, res: Response): Promise<Response> {
+    try {
+      const queryParams: any = {};
+      
+      Object.keys(req.query).forEach(key => {
+        const match = key.match(/^params\[(.*)\]$/);
+        if (match) {
+          queryParams[match[1]] = req.query[key];
+        } else {
+          queryParams[key] = req.query[key];
+        }
+      });
+      
+      const result = await productService.getProducts(queryParams);
+      return res.status(StatusCodes.OK).json(result);
+    } catch (error: any) {
+      return res
+        .status(StatusCodes.INTERNAL_SERVER_ERROR)
+        .json(errorResponse("Failed to get products", error.message));
     }
-    
-    // Also check for params[page] style
-    Object.keys(req.query).forEach(key => {
-      const match = key.match(/^params\[(.*)\]$/);
-      if (match) {
-        queryParams[match[1]] = req.query[key];
-      }
-    });
-    
-    console.log("Extracted query params:", queryParams);
-    
-    const result = await productService.getProducts(queryParams);
-    return res.status(StatusCodes.OK).json(result);
-  } catch (error: any) {
-    return res
-      .status(StatusCodes.INTERNAL_SERVER_ERROR)
-      .json(errorResponse("Failed to get products", error.message));
   }
-}
 
   async getProductBySlug(req: Request, res: Response): Promise<Response> {
     try {
-      // Fix: Handle string or string[] for slug
       const slug = Array.isArray(req.params.slug)
         ? req.params.slug[0]
         : req.params.slug;
@@ -88,7 +76,6 @@ async getProducts(req: Request, res: Response): Promise<Response> {
           .json(errorMessageResponse("Insufficient permissions"));
       }
 
-      // Fix: Handle string or string[] for id
       const id = Array.isArray(req.params.id)
         ? req.params.id[0]
         : req.params.id;
@@ -114,7 +101,6 @@ async getProducts(req: Request, res: Response): Promise<Response> {
           .json(errorMessageResponse("Insufficient permissions"));
       }
 
-      // Fix: Handle string or string[] for id
       const id = Array.isArray(req.params.id)
         ? req.params.id[0]
         : req.params.id;
@@ -140,7 +126,6 @@ async getProducts(req: Request, res: Response): Promise<Response> {
           .json(errorMessageResponse("Insufficient permissions"));
       }
 
-      // Fix: Handle string or string[] for id
       const id = Array.isArray(req.params.id)
         ? req.params.id[0]
         : req.params.id;
@@ -169,7 +154,6 @@ async getProducts(req: Request, res: Response): Promise<Response> {
           .json(errorMessageResponse("Insufficient permissions"));
       }
 
-      // Fix: Handle string or string[] for id
       const id = Array.isArray(req.params.id)
         ? req.params.id[0]
         : req.params.id;
@@ -200,7 +184,6 @@ async getProducts(req: Request, res: Response): Promise<Response> {
           .json(errorMessageResponse("Insufficient permissions"));
       }
 
-      // Fix: Handle string or string[] for id
       const id = Array.isArray(req.params.id)
         ? req.params.id[0]
         : req.params.id;
@@ -228,7 +211,6 @@ async getProducts(req: Request, res: Response): Promise<Response> {
 
   async getRelatedProducts(req: Request, res: Response): Promise<Response> {
     try {
-      // Fix: Handle string or string[] for id
       const id = Array.isArray(req.params.id)
         ? req.params.id[0]
         : req.params.id;
@@ -329,6 +311,17 @@ async getProducts(req: Request, res: Response): Promise<Response> {
       return res
         .status(StatusCodes.INTERNAL_SERVER_ERROR)
         .json(errorResponse("Failed to get product stats", error.message));
+    }
+  }
+
+  async getAllTags(req: Request, res: Response): Promise<Response> {
+    try {
+      const result = await productService.getAllTags();
+      return res.status(StatusCodes.OK).json(result);
+    } catch (error: any) {
+      return res
+        .status(StatusCodes.INTERNAL_SERVER_ERROR)
+        .json(errorResponse("Failed to get tags", error.message));
     }
   }
 }

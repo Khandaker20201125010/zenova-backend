@@ -40,9 +40,9 @@ export interface ProductQueryParams {
   category?: string;
   minPrice?: number;
   maxPrice?: number;
-  tags?: string[];
+  tags?: string | string[];
   isFeatured?: boolean;
   inStock?: boolean;
   sortBy?: string;
-  sortOrder?: 'asc' | 'desc';
+  sortOrder?: "asc" | "desc";
 }

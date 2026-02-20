@@ -10,13 +10,11 @@ import logger from "../../shared/helpers/logger";
 export class ProductService {
   async createProduct(data: CreateProductInput): Promise<ApiResponse> {
     try {
-      // Generate slug from name
       const slug = data.name
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, "-")
         .replace(/(^-|-$)/g, "");
 
-      // Check if slug exists
       const existingProduct = await prisma.product.findUnique({
         where: { slug },
       });
@@ -25,7 +23,6 @@ export class ProductService {
       let finalName = data.name;
 
       if (existingProduct) {
-        // Add timestamp to make slug unique
         finalSlug = `${slug}-${Date.now()}`;
         finalName = `${data.name} (${new Date().toLocaleDateString()})`;
       }
@@ -58,154 +55,140 @@ export class ProductService {
   }
 
   async getProducts(params: ProductQueryParams): Promise<ApiResponse> {
-  try {
-    console.log("========== BACKEND DEBUG ==========");
-    console.log("Received params:", JSON.stringify(params, null, 2));
-    
-    // Parse and validate query parameters
-    const page = Math.max(1, Number(params.page) || 1);
-    const limit = Math.min(100, Math.max(1, Number(params.limit) || 12));
-    const skip = (page - 1) * limit;
-
-    // Parse boolean values
-    const isFeatured = params.isFeatured === true;
-    const inStock = params.inStock === true;
-
-    // Build where clause
-    const where: any = {
-      isActive: true,
-    };
-
-    console.log("Initial where clause:", JSON.stringify(where, null, 2));
-
-    // Search filter
-    if (params.search) {
-      where.OR = [
-        { name: { contains: params.search, mode: "insensitive" } },
-        { description: { contains: params.search, mode: "insensitive" } },
-        { shortDescription: { contains: params.search, mode: "insensitive" } },
-      ];
-      console.log("Added search filter:", params.search);
-    }
-
-    // Category filter - THIS IS THE KEY PART
-    if (params.category) {
-      where.categoryId = params.category;
-      console.log("✅ Category filter applied:", { categoryId: params.category });
-    } else {
-      console.log("❌ No category filter applied");
-    }
-
-    // Price range filter
-    if (params.minPrice !== undefined || params.maxPrice !== undefined) {
-      where.price = {};
-      if (params.minPrice !== undefined) {
-        where.price.gte = Number(params.minPrice);
-        console.log("Added min price filter:", params.minPrice);
-      }
-      if (params.maxPrice !== undefined) {
-        where.price.lte = Number(params.maxPrice);
-        console.log("Added max price filter:", params.maxPrice);
-      }
-    }
-
-    // Tags filter
-    if (params.tags && params.tags.length > 0) {
-      where.tags = { hasSome: params.tags };
-      console.log("Added tags filter:", params.tags);
-    }
-
-    if (params.isFeatured !== undefined) {
-      where.isFeatured = isFeatured;
-      console.log("Added featured filter:", isFeatured);
-    }
-
-    if (params.inStock !== undefined) {
-      if (inStock) {
-        where.stock = { gt: 0 };
-      } else {
-        where.stock = { equals: 0 };
-      }
-      console.log("Added stock filter:", inStock);
-    }
-
-    console.log("Final where clause:", JSON.stringify(where, null, 2));
-
-    // Validate sort field
-    const allowedSortFields = ['price', 'rating', 'createdAt', 'name', 'updatedAt'];
-    const sortBy = allowedSortFields.includes(params.sortBy || '') 
-      ? params.sortBy 
-      : 'createdAt';
-    
-    const sortOrder = params.sortOrder === 'asc' ? 'asc' : 'desc';
-    console.log("Sort by:", sortBy, sortOrder);
-
-    // Get products
-    let products;
-    let total;
-    
     try {
-      [products, total] = await Promise.all([
-        prisma.product.findMany({
-          where,
-          include: {
-            category: {
-              select: {
-                id: true,
-                name: true,
-                slug: true,
-              },
-            },
-            _count: {
-              select: {
-                reviews: true,
-                favorites: true,
-              },
-            },
-          },
-          skip,
-          take: limit,
-          orderBy: { [sortBy!]: sortOrder },
-        }),
-        prisma.product.count({ where }),
-      ]);
+      const page = Math.max(1, Number(params.page) || 1);
+      const limit = Math.min(100, Math.max(1, Number(params.limit) || 12));
+      const skip = (page - 1) * limit;
 
-      console.log(`Found ${products.length} products matching filters`);
-      if (products.length > 0) {
-        console.log("First product categoryId:", products[0].categoryId);
+      const isFeatured = params.isFeatured === true;
+      
+      let inStockFilter = false;
+      if (params.inStock !== undefined) {
+        if (typeof params.inStock === 'string') {
+          inStockFilter = params.inStock === 'true';
+        } else {
+          inStockFilter = params.inStock === true;
+        }
       }
 
-    } catch (dbError: any) {
-      logger.error("Database error in getProducts:", dbError);
+      const where: any = {
+        isActive: true,
+      };
+
+      if (params.search) {
+        where.OR = [
+          { name: { contains: params.search, mode: "insensitive" } },
+          { description: { contains: params.search, mode: "insensitive" } },
+          { shortDescription: { contains: params.search, mode: "insensitive" } },
+        ];
+      }
+
+      if (params.category) {
+        where.categoryId = params.category;
+      }
+
+      if (params.minPrice !== undefined || params.maxPrice !== undefined) {
+        where.price = {};
+        if (params.minPrice !== undefined) {
+          where.price.gte = Number(params.minPrice);
+        }
+        if (params.maxPrice !== undefined) {
+          where.price.lte = Number(params.maxPrice);
+        }
+      }
+
+      if (params.tags) {
+        let tagArray: string[] = [];
+        
+        if (Array.isArray(params.tags)) {
+          tagArray = params.tags;
+        } else if (typeof params.tags === 'string') {
+          tagArray = params.tags.split(',').map(t => t.trim()).filter(t => t.length > 0);
+        }
+        
+        if (tagArray.length > 0) {
+          where.tags = { hasSome: tagArray };
+        }
+      }
+
+      if (params.isFeatured !== undefined) {
+        where.isFeatured = isFeatured;
+      }
+
+      if (params.inStock !== undefined) {
+        if (inStockFilter) {
+          where.stock = { gt: 0 };
+        } else {
+          where.stock = { equals: 0 };
+        }
+      }
+
+      const allowedSortFields = ['price', 'rating', 'createdAt', 'name', 'updatedAt'];
+      const sortBy = allowedSortFields.includes(params.sortBy || '') 
+        ? params.sortBy 
+        : 'createdAt';
+      
+      const sortOrder = params.sortOrder === 'asc' ? 'asc' : 'desc';
+
+      let products;
+      let total;
+      
+      try {
+        [products, total] = await Promise.all([
+          prisma.product.findMany({
+            where,
+            include: {
+              category: {
+                select: {
+                  id: true,
+                  name: true,
+                  slug: true,
+                },
+              },
+              _count: {
+                select: {
+                  reviews: true,
+                  favorites: true,
+                },
+              },
+            },
+            skip,
+            take: limit,
+            orderBy: { [sortBy!]: sortOrder },
+          }),
+          prisma.product.count({ where }),
+        ]);
+      } catch (dbError: any) {
+        logger.error("Database error in getProducts:", dbError);
+        return {
+          success: false,
+          message: "Database error while fetching products",
+          error: dbError?.message || "Unknown database error",
+        };
+      }
+
+      const totalPages = Math.ceil(total / limit);
+
+      return {
+        success: true,
+        message: "Products retrieved successfully",
+        data: products,
+        meta: {
+          page,
+          limit,
+          total,
+          totalPages,
+        },
+      };
+    } catch (error: any) {
+      logger.error("Get products error:", error);
       return {
         success: false,
-        message: "Database error while fetching products",
-        error: dbError?.message || "Unknown database error",
+        message: "Failed to get products",
+        error: error?.message || "Unknown error",
       };
     }
-
-    const totalPages = Math.ceil(total / limit);
-
-    return {
-      success: true,
-      message: "Products retrieved successfully",
-      data: products,
-      meta: {
-        page,
-        limit,
-        total,
-        totalPages,
-      },
-    };
-  } catch (error: any) {
-    logger.error("Get products error:", error);
-    return {
-      success: false,
-      message: "Failed to get products",
-      error: error?.message || "Unknown error",
-    };
   }
-}
 
   async getProductBySlug(slug: string): Promise<ApiResponse> {
     try {
@@ -321,7 +304,6 @@ export class ProductService {
         };
       }
 
-      // If name is updated, update slug
       let updateData: any = { ...data };
       if (data.name && data.name !== product.name) {
         const slug = data.name
@@ -365,7 +347,6 @@ export class ProductService {
         };
       }
 
-      // Soft delete by setting inactive
       await prisma.product.update({
         where: { id },
         data: { isActive: false },
@@ -560,7 +541,6 @@ export class ProductService {
     productId: string,
   ): Promise<ApiResponse> {
     try {
-      // Check if already favorited
       const existingFavorite = await prisma.favorite.findUnique({
         where: {
           userId_productId: {
@@ -571,7 +551,6 @@ export class ProductService {
       });
 
       if (existingFavorite) {
-        // Remove from favorites
         await prisma.favorite.delete({
           where: {
             userId_productId: {
@@ -587,7 +566,6 @@ export class ProductService {
           data: { isFavorited: false },
         };
       } else {
-        // Add to favorites
         await prisma.favorite.create({
           data: {
             userId,
@@ -706,6 +684,38 @@ export class ProductService {
       return {
         success: false,
         message: "Failed to get product stats",
+        error: error?.message || "Unknown error",
+      };
+    }
+  }
+
+  async getAllTags(): Promise<ApiResponse> {
+    try {
+      const products = await prisma.product.findMany({
+        where: { 
+          isActive: true,
+        },
+        select: { 
+          tags: true,
+        },
+      });
+      
+      const allTags = products
+        .flatMap(p => p.tags || [])
+        .filter(tag => tag && tag.trim() !== '');
+
+      const uniqueTags = [...new Set(allTags)].sort();
+
+      return {
+        success: true,
+        message: "Tags retrieved successfully",
+        data: uniqueTags,
+      };
+    } catch (error: any) {
+      logger.error("Get all tags error:", error);
+      return {
+        success: false,
+        message: "Failed to get tags",
         error: error?.message || "Unknown error",
       };
     }
