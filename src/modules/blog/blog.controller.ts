@@ -40,10 +40,17 @@ export class BlogController {
 
   async getPostBySlug(req: Request, res: Response): Promise<Response> {
     try {
-      // Fix: Handle string or string[] for slug
-      const slug = Array.isArray(req.params.slug)
-        ? req.params.slug[0]
+      // Handle both string and string[] cases
+      const slug = Array.isArray(req.params.slug) 
+        ? req.params.slug[0] 
         : req.params.slug;
+      
+      if (!slug) {
+        return res
+          .status(StatusCodes.BAD_REQUEST)
+          .json(errorResponse("Slug is required"));
+      }
+
       const result = await blogService.getPostBySlug(slug);
 
       if (!result.success) {
@@ -66,10 +73,17 @@ export class BlogController {
           .json(errorResponse("Authentication required"));
       }
 
-      // Fix: Handle string or string[] for id
-      const id = Array.isArray(req.params.id)
-        ? req.params.id[0]
+      // Handle both string and string[] cases
+      const id = Array.isArray(req.params.id) 
+        ? req.params.id[0] 
         : req.params.id;
+      
+      if (!id) {
+        return res
+          .status(StatusCodes.BAD_REQUEST)
+          .json(errorResponse("ID is required"));
+      }
+
       const result = await blogService.getPostById(id);
 
       if (!result.success) {
@@ -92,10 +106,17 @@ export class BlogController {
           .json(errorResponse("Authentication required"));
       }
 
-      // Fix: Handle string or string[] for id
-      const id = Array.isArray(req.params.id)
-        ? req.params.id[0]
+      // Handle both string and string[] cases
+      const id = Array.isArray(req.params.id) 
+        ? req.params.id[0] 
         : req.params.id;
+      
+      if (!id) {
+        return res
+          .status(StatusCodes.BAD_REQUEST)
+          .json(errorResponse("ID is required"));
+      }
+
       const result = await blogService.updatePost(id, req.user.id, req.body);
 
       if (!result.success) {
@@ -118,10 +139,17 @@ export class BlogController {
           .json(errorResponse("Authentication required"));
       }
 
-      // Fix: Handle string or string[] for id
-      const id = Array.isArray(req.params.id)
-        ? req.params.id[0]
+      // Handle both string and string[] cases
+      const id = Array.isArray(req.params.id) 
+        ? req.params.id[0] 
         : req.params.id;
+      
+      if (!id) {
+        return res
+          .status(StatusCodes.BAD_REQUEST)
+          .json(errorResponse("ID is required"));
+      }
+
       const result = await blogService.deletePost(id, req.user.id);
 
       if (!result.success) {
@@ -184,7 +212,13 @@ export class BlogController {
 
   async getBlogStats(req: AuthRequest, res: Response): Promise<Response> {
     try {
-      if (!req.user || req.user.role !== "ADMIN") {
+      if (!req.user) {
+        return res
+          .status(StatusCodes.UNAUTHORIZED)
+          .json(errorResponse("Authentication required"));
+      }
+
+      if (req.user.role !== "ADMIN") {
         return res
           .status(StatusCodes.FORBIDDEN)
           .json(errorResponse("Insufficient permissions"));
@@ -213,7 +247,12 @@ export class BlogController {
           .json(errorResponse("No file uploaded"));
       }
 
-      const imageUrl = (req.file as any).secure_url;
+      // Handle different file upload services (Cloudinary, local, etc.)
+      const imageUrl = (req.file as any).path || 
+                      (req.file as any).secure_url || 
+                      (req.file as any).location || 
+                      `/uploads/${(req.file as any).filename}`;
+
       return res
         .status(StatusCodes.OK)
         .json(

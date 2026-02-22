@@ -7,6 +7,38 @@ import {
   BlogQueryParams,
 } from "./blog.interface";
 
+// Helper function to safely convert any value to boolean
+function toBoolean(value: any): boolean {
+  if (value === undefined || value === null) {
+    return true; // Default value
+  }
+  
+  if (typeof value === 'boolean') {
+    return value;
+  }
+  
+  if (typeof value === 'string') {
+    const str = value.toLowerCase().trim();
+    return str === 'true' || str === '1' || str === 'yes';
+  }
+  
+  if (typeof value === 'number') {
+    return value === 1;
+  }
+  
+  return true; // Default for any other type
+}
+
+// Helper function to safely convert to number
+function toNumber(value: any, defaultValue: number): number {
+  if (value === undefined || value === null) {
+    return defaultValue;
+  }
+  
+  const num = Number(value);
+  return !isNaN(num) && num > 0 ? num : defaultValue;
+}
+
 export class BlogService {
   async createPost(
     userId: string,
@@ -24,19 +56,27 @@ export class BlogService {
         where: { slug },
       });
 
-      if (existingPost) {
-        // Add timestamp to make slug unique
-        data.title = `${data.title} (${new Date().toLocaleDateString()})`;
-      }
+      const finalSlug = existingPost ? `${slug}-${Date.now()}` : slug;
+
+      // Prepare data for Prisma - match schema field names
+      const postData: any = {
+        title: data.title,
+        slug: finalSlug,
+        excerpt: data.excerpt || null,
+        content: data.content,
+        coverImage: data.coverImage || null,
+        authorId: userId,
+        category: data.category || null,
+        tags: data.tags || [],
+        isPublished: data.isPublished || false,
+        publishedAt: data.isPublished ? new Date() : null,
+        seoTitle: data.seoTitle || null,
+        seoDescription: data.seoDescription || null,
+        seoKeywords: data.seoKeywords || [],
+      };
 
       const post = await prisma.blogPost.create({
-        data: {
-          ...data,
-          slug: existingPost ? `${slug}-${Date.now()}` : slug,
-          authorId: userId,
-          publishedAt: data.isPublished ? new Date() : null,
-          seoKeywords: data.seoKeywords || [],
-        },
+        data: postData,
         include: {
           author: {
             select: {
@@ -72,47 +112,52 @@ export class BlogService {
 
   async getPosts(params: BlogQueryParams): Promise<ApiResponse> {
     try {
-      const {
-        page = 1,
-        limit = 10,
-        search,
-        category,
-        tags,
-        isPublished = true,
-        authorId,
-        sortBy = "createdAt",
-        sortOrder = "desc",
-      } = params;
+      // Use helper functions to safely convert values
+      const page = toNumber(params.page, 1);
+      const limit = toNumber(params.limit, 10);
+      
+      // Ensure valid numbers with bounds
+      const validPage = Math.max(1, page);
+      const validLimit = Math.min(100, Math.max(1, limit));
+      
+      const skip = (validPage - 1) * validLimit;
 
-      const skip = (page - 1) * limit;
-
+      // Parse sortOrder
+      const sortOrder = params.sortOrder === 'asc' ? 'asc' : 'desc';
+      
       // Build where clause
       const where: any = {};
 
-      if (isPublished !== undefined) {
-        where.isPublished = isPublished;
-      }
+      // Handle isPublished - use helper function
+      where.isPublished = toBoolean(params.isPublished);
 
-      if (search) {
+      if (params.search) {
         where.OR = [
-          { title: { contains: search, mode: "insensitive" } },
-          { excerpt: { contains: search, mode: "insensitive" } },
-          { content: { contains: search, mode: "insensitive" } },
+          { title: { contains: params.search, mode: "insensitive" } },
+          { excerpt: { contains: params.search, mode: "insensitive" } },
+          { content: { contains: params.search, mode: "insensitive" } },
         ];
       }
 
-      if (category) {
-        where.category = category;
+      if (params.category) {
+        where.category = params.category;
       }
 
-      if (tags && tags.length > 0) {
-        where.tags = { hasSome: tags };
+      if (params.tags && params.tags.length > 0) {
+        // Handle tags that might come as string or array
+        const tagsArray = Array.isArray(params.tags) 
+          ? params.tags 
+          : [params.tags];
+        where.tags = { hasSome: tagsArray };
       }
 
-      if (authorId) {
-        where.authorId = authorId;
+      if (params.authorId) {
+        where.authorId = params.authorId;
       }
 
+      // Determine sort field
+      const sortField = params.sortBy || "createdAt";
+      
       // Get posts
       const [posts, total] = await Promise.all([
         prisma.blogPost.findMany({
@@ -128,22 +173,23 @@ export class BlogService {
             },
           },
           skip,
-          take: limit,
-          orderBy: { [sortBy]: sortOrder },
+          take: validLimit,
+          orderBy: { [sortField]: sortOrder },
         }),
         prisma.blogPost.count({ where }),
       ]);
 
-      const totalPages = Math.ceil(total / limit);
+      const totalPages = Math.ceil(total / validLimit);
 
+      // Return in the format frontend expects
       return {
         success: true,
         message: "Blog posts retrieved successfully",
-        data: posts,
-        meta: {
-          page,
-          limit,
+        data: {
+          posts: posts,
           total,
+          page: validPage,
+          limit: validLimit,
           totalPages,
         },
       };
@@ -246,15 +292,16 @@ export class BlogService {
 
       // Check if user is author or admin
       if (post.authorId !== userId) {
-        // Check if user is admin (this would be done in controller)
         return {
           success: false,
           message: "Not authorized to update this post",
         };
       }
 
+      // Prepare update data
+      const updateData: any = { ...data };
+
       // If title is updated, update slug
-      let updateData: any = data;
       if (data.title && data.title !== post.title) {
         const slug = data.title
           .toLowerCase()
@@ -351,6 +398,9 @@ export class BlogService {
 
   async getFeaturedPosts(limit: number = 5): Promise<ApiResponse> {
     try {
+      // Use helper function
+      const validLimit = Math.min(100, Math.max(1, toNumber(limit, 5)));
+      
       const posts = await prisma.blogPost.findMany({
         where: {
           isPublished: true,
@@ -364,7 +414,7 @@ export class BlogService {
             },
           },
         },
-        take: limit,
+        take: validLimit,
         orderBy: { views: "desc" },
       });
 
@@ -381,6 +431,9 @@ export class BlogService {
 
   async getRecentPosts(limit: number = 5): Promise<ApiResponse> {
     try {
+      // Use helper function
+      const validLimit = Math.min(100, Math.max(1, toNumber(limit, 5)));
+      
       const posts = await prisma.blogPost.findMany({
         where: {
           isPublished: true,
@@ -394,7 +447,7 @@ export class BlogService {
             },
           },
         },
-        take: limit,
+        take: validLimit,
         orderBy: { publishedAt: "desc" },
       });
 
@@ -427,10 +480,15 @@ export class BlogService {
         },
       });
 
+      // Transform to simple array of category names
+      const categoryNames = categories
+        .map(c => c.category)
+        .filter((c): c is string => c !== null);
+
       return {
         success: true,
         message: "Categories retrieved successfully",
-        data: categories,
+        data: categoryNames,
       };
     } catch (error: any) {
       logger.error("Get categories error:", error);
@@ -446,22 +504,12 @@ export class BlogService {
       });
 
       const allTags = posts.flatMap((post) => post.tags);
-      const tagCounts = allTags.reduce(
-        (acc, tag) => {
-          acc[tag] = (acc[tag] || 0) + 1;
-          return acc;
-        },
-        {} as Record<string, number>,
-      );
-
-      const tags = Object.entries(tagCounts)
-        .map(([name, count]) => ({ name, count }))
-        .sort((a, b) => b.count - a.count);
+      const uniqueTags = [...new Set(allTags)];
 
       return {
         success: true,
         message: "Tags retrieved successfully",
-        data: tags,
+        data: uniqueTags,
       };
     } catch (error: any) {
       logger.error("Get tags error:", error);
@@ -488,7 +536,6 @@ export class BlogService {
         prisma.blogPost
           .groupBy({
             by: ["authorId"],
-            _count: true,
           })
           .then((results) => results.length),
         prisma.blogPost.findMany({

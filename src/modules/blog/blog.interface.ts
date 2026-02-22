@@ -1,4 +1,5 @@
 export interface CreateBlogPostInput {
+   slug: string | string[]
   title: string;
   excerpt?: string;
   content: string;

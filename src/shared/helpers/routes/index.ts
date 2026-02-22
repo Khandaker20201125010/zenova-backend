@@ -23,7 +23,7 @@ router.use("/orders", orderRoutes);
 router.use("/payments", paymentRoutes);
 router.use("/notifications", notificationRoutes);
 router.use("/contacts", contactRoutes);
-router.use("/blog", blogRoutes);
+router.use("/blogs", blogRoutes);
 router.use("/categories", categoryRoutes);
 router.use("/reviews", reviewRoutes);
 router.use("settings", settingsRoutes);
