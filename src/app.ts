@@ -18,7 +18,9 @@ import router from "./shared/helpers/routes";
 const app: Application = express();
 
 // Security middleware
-app.use(helmet());
+app.use(helmet({
+  crossOriginResourcePolicy: { policy: "cross-origin" } // Allow cross-origin resources
+}));
 app.use(
   cors({
     origin: config.FRONTEND_URL,

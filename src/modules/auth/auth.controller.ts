@@ -84,7 +84,8 @@ export class AuthController {
 
   async refreshToken(req: Request, res: Response): Promise<Response> {
     try {
-      const refreshToken = req.cookies.refreshToken;
+      // Check both cookies and the request body for the refresh token
+      const refreshToken = req.cookies.refreshToken || req.body.refreshToken;
 
       if (!refreshToken) {
         return res

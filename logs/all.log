@@ -3249,3 +3249,17 @@
 
 [31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
 2026-02-22 22:38:35:3835 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-02-23 22:59:06:596 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-02-23 23:08:28:828 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-02-24 21:31:11:3111 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-02-24 21:34:37:3437 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-02-25 00:38:07:387 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-02-25 00:42:59:4259 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-02-25 00:45:20:4520 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-02-25 00:50:32:5032 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-02-25 00:56:20:5620 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-02-25 22:42:24:4224 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-02-25 23:19:22:1922 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-02-25 23:21:10:2110 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-02-25 23:25:35:2535 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-02-25 23:26:36:2636 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
