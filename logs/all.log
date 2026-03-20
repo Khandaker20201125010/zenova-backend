@@ -3263,3 +3263,268 @@
 2026-02-25 23:21:10:2110 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
 2026-02-25 23:25:35:2535 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
 2026-02-25 23:26:36:2636 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-02-26 16:24:04:244 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-02-27 20:21:01:211 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-02-28 21:28:02:282 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-01 19:33:01:331 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-02 19:55:43:5543 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-03 22:25:54:2554 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-03 22:27:29:2729 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.refreshToken.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\auth\auth.services.ts:349:33[39m
+
+[31m  346 });[39m
+[31m  347 [39m
+[31m  348 // Save new refresh token[39m
+[31m→ 349 await prisma.refreshToken.create([39m
+[31mUnique constraint failed on the fields: (`token`)[39m
+2026-03-03 22:27:29:2729 [31merror[39m: [31mRefresh token error: [39m
+[31mInvalid `prisma.refreshToken.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\auth\auth.services.ts:349:33[39m
+
+[31m  346 });[39m
+[31m  347 [39m
+[31m  348 // Save new refresh token[39m
+[31m→ 349 await prisma.refreshToken.create([39m
+[31mUnique constraint failed on the fields: (`token`)[39m
+2026-03-04 23:35:03:353 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-05 23:13:42:1342 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-05 23:41:51:4151 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-05 23:52:42:5242 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.refreshToken.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\auth\auth.services.ts:349:33[39m
+
+[31m  346 });[39m
+[31m  347 [39m
+[31m  348 // Save new refresh token[39m
+[31m→ 349 await prisma.refreshToken.create([39m
+[31mUnique constraint failed on the fields: (`token`)[39m
+2026-03-05 23:52:42:5242 [31merror[39m: [31mRefresh token error: [39m
+[31mInvalid `prisma.refreshToken.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\auth\auth.services.ts:349:33[39m
+
+[31m  346 });[39m
+[31m  347 [39m
+[31m  348 // Save new refresh token[39m
+[31m→ 349 await prisma.refreshToken.create([39m
+[31mUnique constraint failed on the fields: (`token`)[39m
+2026-03-06 23:32:10:3210 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-09 22:13:40:1340 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-09 23:13:29:1329 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-09 23:21:33:2133 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-09 23:24:00:240 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-09 23:25:39:2539 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-09 23:26:29:2629 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-09 23:38:20:3820 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-10 00:14:07:147 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-10 00:18:54:1854 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-10 00:19:38:1938 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-10 00:35:16:3516 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-10 00:45:10:4510 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-11 23:05:09:59 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-12 23:20:32:2032 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-12 23:47:09:479 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.refreshToken.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\auth\auth.services.ts:349:33[39m
+
+[31m  346 });[39m
+[31m  347 [39m
+[31m  348 // Save new refresh token[39m
+[31m→ 349 await prisma.refreshToken.create([39m
+[31mUnique constraint failed on the fields: (`token`)[39m
+2026-03-12 23:47:09:479 [31merror[39m: [31mRefresh token error: [39m
+[31mInvalid `prisma.refreshToken.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\auth\auth.services.ts:349:33[39m
+
+[31m  346 });[39m
+[31m  347 [39m
+[31m  348 // Save new refresh token[39m
+[31m→ 349 await prisma.refreshToken.create([39m
+[31mUnique constraint failed on the fields: (`token`)[39m
+2026-03-14 23:39:27:3927 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-15 23:03:25:325 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-17 22:24:00:240 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-17 22:55:15:5515 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-17 23:01:18:118 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-17 23:02:48:248 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-17 23:10:33:1033 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-17 23:12:11:1211 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-17 23:17:27:1727 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-18 23:08:18:818 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-18 23:47:51:4751 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-19 00:11:38:1138 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-19 21:28:24:2824 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-19 22:24:55:2455 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-19 22:24:55:2455 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-19 22:24:56:2456 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-19 22:24:56:2456 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-20 22:01:17:117 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-20 22:37:52:3752 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
