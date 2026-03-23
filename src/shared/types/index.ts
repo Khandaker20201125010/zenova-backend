@@ -73,6 +73,8 @@ export interface CreateOrderInput {
   billingAddress?: Address;
   tax?: number;
   shipping?: number;
+  discount?: number; 
+  paymentMethod?: string; 
   notes?: string;
 }
 

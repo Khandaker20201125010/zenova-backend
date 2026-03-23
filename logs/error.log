@@ -3446,3 +3446,3013 @@
 [31m        })[39m
 
 [31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 22:45:38:4538 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 22:45:38:4538 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 22:45:38:4538 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 22:45:38:4538 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 22:58:38:5838 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 22:58:38:5838 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 22:59:03:593 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 22:59:03:593 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 22:59:06:596 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 22:59:06:596 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 22:59:12:5912 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 22:59:12:5912 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 22:59:23:5923 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 22:59:23:5923 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:01:03:13 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:01:03:13 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:04:15:415 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:04:15:415 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:04:32:432 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:04:32:432 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:04:53:453 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:04:53:453 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:04:57:457 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:04:57:457 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:05:02:52 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:05:02:52 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:05:16:516 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:05:16:516 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:05:16:516 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:05:16:516 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:05:27:527 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:05:27:527 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:10:03:103 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:221:22[39m
+
+[31m  218 [39m
+[31m  219 // Get orders[39m
+[31m  220 const [orders, total] = await Promise.all([[39m
+[31m→ 221   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:10:03:103 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:221:22[39m
+
+[31m  218 [39m
+[31m  219 // Get orders[39m
+[31m  220 const [orders, total] = await Promise.all([[39m
+[31m→ 221   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:15:03:153 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:268:22[39m
+
+[31m  265 [39m
+[31m  266 // Get orders[39m
+[31m  267 const [orders, total] = await Promise.all([[39m
+[31m→ 268   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:15:03:153 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:268:22[39m
+
+[31m  265 [39m
+[31m  266 // Get orders[39m
+[31m  267 const [orders, total] = await Promise.all([[39m
+[31m→ 268   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:17:42:1742 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:268:22[39m
+
+[31m  265 [39m
+[31m  266 // Get orders[39m
+[31m  267 const [orders, total] = await Promise.all([[39m
+[31m→ 268   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:17:42:1742 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:268:22[39m
+
+[31m  265 [39m
+[31m  266 // Get orders[39m
+[31m  267 const [orders, total] = await Promise.all([[39m
+[31m→ 268   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:17:44:1744 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:268:22[39m
+
+[31m  265 [39m
+[31m  266 // Get orders[39m
+[31m  267 const [orders, total] = await Promise.all([[39m
+[31m→ 268   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:17:44:1744 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:268:22[39m
+
+[31m  265 [39m
+[31m  266 // Get orders[39m
+[31m  267 const [orders, total] = await Promise.all([[39m
+[31m→ 268   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:17:59:1759 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:268:22[39m
+
+[31m  265 [39m
+[31m  266 // Get orders[39m
+[31m  267 const [orders, total] = await Promise.all([[39m
+[31m→ 268   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:17:59:1759 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:268:22[39m
+
+[31m  265 [39m
+[31m  266 // Get orders[39m
+[31m  267 const [orders, total] = await Promise.all([[39m
+[31m→ 268   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:18:15:1815 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:268:22[39m
+
+[31m  265 [39m
+[31m  266 // Get orders[39m
+[31m  267 const [orders, total] = await Promise.all([[39m
+[31m→ 268   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:18:15:1815 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:268:22[39m
+
+[31m  265 [39m
+[31m  266 // Get orders[39m
+[31m  267 const [orders, total] = await Promise.all([[39m
+[31m→ 268   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:22:45:2245 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:22:45:2245 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:27:44:2744 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:27:44:2744 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:32:45:3245 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:32:45:3245 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:37:44:3744 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:37:44:3744 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:42:45:4245 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:42:45:4245 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:47:45:4745 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:47:45:4745 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:57:44:5744 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:274:22[39m
+
+[31m  271 [39m
+[31m  272 // Get orders[39m
+[31m  273 const [orders, total] = await Promise.all([[39m
+[31m→ 274   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:57:44:5744 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:274:22[39m
+
+[31m  271 [39m
+[31m  272 // Get orders[39m
+[31m  273 const [orders, total] = await Promise.all([[39m
+[31m→ 274   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:57:48:5748 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:274:22[39m
+
+[31m  271 [39m
+[31m  272 // Get orders[39m
+[31m  273 const [orders, total] = await Promise.all([[39m
+[31m→ 274   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:57:48:5748 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:274:22[39m
+
+[31m  271 [39m
+[31m  272 // Get orders[39m
+[31m  273 const [orders, total] = await Promise.all([[39m
+[31m→ 274   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:58:12:5812 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:274:22[39m
+
+[31m  271 [39m
+[31m  272 // Get orders[39m
+[31m  273 const [orders, total] = await Promise.all([[39m
+[31m→ 274   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-22 23:58:12:5812 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:274:22[39m
+
+[31m  271 [39m
+[31m  272 // Get orders[39m
+[31m  273 const [orders, total] = await Promise.all([[39m
+[31m→ 274   prisma.order.findMany({[39m
+[31m          where: {},[39m
+[31m          include: {[39m
+[31m            user: {[39m
+[31m              select: {[39m
+[31m                id: true,[39m
+[31m                name: true,[39m
+[31m                email: true[39m
+[31m              }[39m
+[31m            },[39m
+[31m            orderItems: {[39m
+[31m              include: {[39m
+[31m                product: {[39m
+[31m                  select: {[39m
+[31m                    id: true,[39m
+[31m                    name: true,[39m
+[31m                    images: true[39m
+[31m                  }[39m
+[31m                }[39m
+[31m              }[39m
+[31m            },[39m
+[31m            _count: {[39m
+[31m              select: {[39m
+[31m                orderItems: true[39m
+[31m              }[39m
+[31m            }[39m
+[31m          },[39m
+[31m          skip: 0,[39m
+[31m          take: "10",[39m
+[31m                ~~~~[39m
+[31m          orderBy: {[39m
+[31m            createdAt: "desc"[39m
+[31m          }[39m
+[31m        })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-23 00:00:32:032 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany([39m
+[31mThe column `orders.subtotal` does not exist in the current database.[39m
+2026-03-23 00:00:32:032 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany([39m
+[31mThe column `orders.subtotal` does not exist in the current database.[39m
+2026-03-23 00:00:34:034 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany([39m
+[31mThe column `orders.subtotal` does not exist in the current database.[39m
+2026-03-23 00:00:34:034 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany([39m
+[31mThe column `orders.subtotal` does not exist in the current database.[39m
+2026-03-23 00:05:35:535 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany([39m
+[31mThe column `orders.subtotal` does not exist in the current database.[39m
+2026-03-23 00:05:35:535 [31merror[39m: [31mGet orders error: [39m
+[31mInvalid `prisma.order.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:195:22[39m
+
+[31m  192 [39m
+[31m  193 // Get orders[39m
+[31m  194 const [orders, total] = await Promise.all([[39m
+[31m→ 195   prisma.order.findMany([39m
+[31mThe column `orders.subtotal` does not exist in the current database.[39m
+2026-03-23 16:51:20:5120 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:30:44[39m
+
+[31m  27   finalName = `${data.name} (${new Date().toLocaleDateString()})`;[39m
+[31m  28 }[39m
+[31m  29 [39m
+[31m→ 30 const product = await prisma.product.create([39m
+[31mForeign key constraint violated on the constraint: `products_categoryId_fkey`[39m
+2026-03-23 16:51:20:5120 [31merror[39m: [31mCreate product error: [39m
+[31mInvalid `prisma.product.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:30:44[39m
+
+[31m  27   finalName = `${data.name} (${new Date().toLocaleDateString()})`;[39m
+[31m  28 }[39m
+[31m  29 [39m
+[31m→ 30 const product = await prisma.product.create([39m
+[31mForeign key constraint violated on the constraint: `products_categoryId_fkey`[39m
+2026-03-23 16:52:05:525 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `tx.order.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:76:41[39m
+
+[31m  73 }[39m
+[31m  74 [39m
+[31m  75 // Create order[39m
+[31m→ 76 const newOrder = await tx.order.create({[39m
+[31m       data: {[39m
+[31m         orderNumber: "ORD-1774263125546-N5C75PECE",[39m
+[31m         userId: "cmn32dv5z0009vhcwkvd8z28m",[39m
+[31m         amount: 2599.98,[39m
+[31m         ~~~~~~[39m
+[31m         tax: 259.99,[39m
+[31m         shipping: 25,[39m
+[31m         total: 2884.9700000000003,[39m
+[31m         shippingAddress: {[39m
+[31m           street: "123 Main St",[39m
+[31m           city: "New York",[39m
+[31m           state: "NY",[39m
+[31m           country: "USA",[39m
+[31m           postalCode: "10001",[39m
+[31m           phone: "+1234567890"[39m
+[31m         },[39m
+[31m         billingAddress: {[39m
+[31m           street: "123 Main St",[39m
+[31m           city: "New York",[39m
+[31m           state: "NY",[39m
+[31m           country: "USA",[39m
+[31m           postalCode: "10001",[39m
+[31m           phone: "+1234567890"[39m
+[31m         },[39m
+[31m         orderItems: {[39m
+[31m           create: [[39m
+[31m             {[39m
+[31m               productId: "cmn32g3qu000jvhcwmuhn21e1",[39m
+[31m               quantity: 2,[39m
+[31m               price: 1299.99[39m
+[31m             }[39m
+[31m           ][39m
+[31m         },[39m
+[31m     ?   id?: String,[39m
+[31m     ?   subtotal?: Float,[39m
+[31m     ?   discount?: Float,[39m
+[31m     ?   status?: OrderStatus,[39m
+[31m     ?   paymentStatus?: PaymentStatus,[39m
+[31m     ?   paymentMethod?: String | Null,[39m
+[31m     ?   stripePaymentId?: String | Null,[39m
+[31m     ?   stripeSessionId?: String | Null,[39m
+[31m     ?   createdAt?: DateTime,[39m
+[31m     ?   updatedAt?: DateTime[39m
+[31m       },[39m
+[31m       include: {[39m
+[31m         orderItems: {[39m
+[31m           include: {[39m
+[31m             product: {[39m
+[31m               select: {[39m
+[31m                 id: true,[39m
+[31m                 name: true,[39m
+[31m                 images: true[39m
+[31m               }[39m
+[31m             }[39m
+[31m           }[39m
+[31m         }[39m
+[31m       }[39m
+[31m     })[39m
+
+[31mUnknown argument `amount`. Available options are marked with ?.[39m
+2026-03-23 16:52:05:525 [31merror[39m: [31mCreate order error: [39m
+[31mInvalid `tx.order.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:76:41[39m
+
+[31m  73 }[39m
+[31m  74 [39m
+[31m  75 // Create order[39m
+[31m→ 76 const newOrder = await tx.order.create({[39m
+[31m       data: {[39m
+[31m         orderNumber: "ORD-1774263125546-N5C75PECE",[39m
+[31m         userId: "cmn32dv5z0009vhcwkvd8z28m",[39m
+[31m         amount: 2599.98,[39m
+[31m         ~~~~~~[39m
+[31m         tax: 259.99,[39m
+[31m         shipping: 25,[39m
+[31m         total: 2884.9700000000003,[39m
+[31m         shippingAddress: {[39m
+[31m           street: "123 Main St",[39m
+[31m           city: "New York",[39m
+[31m           state: "NY",[39m
+[31m           country: "USA",[39m
+[31m           postalCode: "10001",[39m
+[31m           phone: "+1234567890"[39m
+[31m         },[39m
+[31m         billingAddress: {[39m
+[31m           street: "123 Main St",[39m
+[31m           city: "New York",[39m
+[31m           state: "NY",[39m
+[31m           country: "USA",[39m
+[31m           postalCode: "10001",[39m
+[31m           phone: "+1234567890"[39m
+[31m         },[39m
+[31m         orderItems: {[39m
+[31m           create: [[39m
+[31m             {[39m
+[31m               productId: "cmn32g3qu000jvhcwmuhn21e1",[39m
+[31m               quantity: 2,[39m
+[31m               price: 1299.99[39m
+[31m             }[39m
+[31m           ][39m
+[31m         },[39m
+[31m     ?   id?: String,[39m
+[31m     ?   subtotal?: Float,[39m
+[31m     ?   discount?: Float,[39m
+[31m     ?   status?: OrderStatus,[39m
+[31m     ?   paymentStatus?: PaymentStatus,[39m
+[31m     ?   paymentMethod?: String | Null,[39m
+[31m     ?   stripePaymentId?: String | Null,[39m
+[31m     ?   stripeSessionId?: String | Null,[39m
+[31m     ?   createdAt?: DateTime,[39m
+[31m     ?   updatedAt?: DateTime[39m
+[31m       },[39m
+[31m       include: {[39m
+[31m         orderItems: {[39m
+[31m           include: {[39m
+[31m             product: {[39m
+[31m               select: {[39m
+[31m                 id: true,[39m
+[31m                 name: true,[39m
+[31m                 images: true[39m
+[31m               }[39m
+[31m             }[39m
+[31m           }[39m
+[31m         }[39m
+[31m       }[39m
+[31m     })[39m
+
+[31mUnknown argument `amount`. Available options are marked with ?.[39m
+2026-03-23 16:56:29:5629 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `tx.order.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:76:41[39m
+
+[31m  73 }[39m
+[31m  74 [39m
+[31m  75 // Create order[39m
+[31m→ 76 const newOrder = await tx.order.create({[39m
+[31m       data: {[39m
+[31m         orderNumber: "ORD-1774263389029-4G2DAXKKP",[39m
+[31m         userId: "cmn32dv5z0009vhcwkvd8z28m",[39m
+[31m         amount: 2599.98,[39m
+[31m         ~~~~~~[39m
+[31m         tax: 259.99,[39m
+[31m         shipping: 25,[39m
+[31m         total: 2884.9700000000003,[39m
+[31m         shippingAddress: {[39m
+[31m           street: "123 Main St",[39m
+[31m           city: "New York",[39m
+[31m           state: "NY",[39m
+[31m           country: "USA",[39m
+[31m           postalCode: "10001",[39m
+[31m           phone: "+1234567890"[39m
+[31m         },[39m
+[31m         billingAddress: {[39m
+[31m           street: "123 Main St",[39m
+[31m           city: "New York",[39m
+[31m           state: "NY",[39m
+[31m           country: "USA",[39m
+[31m           postalCode: "10001",[39m
+[31m           phone: "+1234567890"[39m
+[31m         },[39m
+[31m         orderItems: {[39m
+[31m           create: [[39m
+[31m             {[39m
+[31m               productId: "cmn32g3qu000jvhcwmuhn21e1",[39m
+[31m               quantity: 2,[39m
+[31m               price: 1299.99[39m
+[31m             }[39m
+[31m           ][39m
+[31m         },[39m
+[31m     ?   id?: String,[39m
+[31m     ?   subtotal?: Float,[39m
+[31m     ?   discount?: Float,[39m
+[31m     ?   status?: OrderStatus,[39m
+[31m     ?   paymentStatus?: PaymentStatus,[39m
+[31m     ?   paymentMethod?: String | Null,[39m
+[31m     ?   stripePaymentId?: String | Null,[39m
+[31m     ?   stripeSessionId?: String | Null,[39m
+[31m     ?   createdAt?: DateTime,[39m
+[31m     ?   updatedAt?: DateTime[39m
+[31m       },[39m
+[31m       include: {[39m
+[31m         orderItems: {[39m
+[31m           include: {[39m
+[31m             product: {[39m
+[31m               select: {[39m
+[31m                 id: true,[39m
+[31m                 name: true,[39m
+[31m                 images: true[39m
+[31m               }[39m
+[31m             }[39m
+[31m           }[39m
+[31m         }[39m
+[31m       }[39m
+[31m     })[39m
+
+[31mUnknown argument `amount`. Available options are marked with ?.[39m
+2026-03-23 16:56:29:5629 [31merror[39m: [31mCreate order error: [39m
+[31mInvalid `tx.order.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\order\order.service.ts:76:41[39m
+
+[31m  73 }[39m
+[31m  74 [39m
+[31m  75 // Create order[39m
+[31m→ 76 const newOrder = await tx.order.create({[39m
+[31m       data: {[39m
+[31m         orderNumber: "ORD-1774263389029-4G2DAXKKP",[39m
+[31m         userId: "cmn32dv5z0009vhcwkvd8z28m",[39m
+[31m         amount: 2599.98,[39m
+[31m         ~~~~~~[39m
+[31m         tax: 259.99,[39m
+[31m         shipping: 25,[39m
+[31m         total: 2884.9700000000003,[39m
+[31m         shippingAddress: {[39m
+[31m           street: "123 Main St",[39m
+[31m           city: "New York",[39m
+[31m           state: "NY",[39m
+[31m           country: "USA",[39m
+[31m           postalCode: "10001",[39m
+[31m           phone: "+1234567890"[39m
+[31m         },[39m
+[31m         billingAddress: {[39m
+[31m           street: "123 Main St",[39m
+[31m           city: "New York",[39m
+[31m           state: "NY",[39m
+[31m           country: "USA",[39m
+[31m           postalCode: "10001",[39m
+[31m           phone: "+1234567890"[39m
+[31m         },[39m
+[31m         orderItems: {[39m
+[31m           create: [[39m
+[31m             {[39m
+[31m               productId: "cmn32g3qu000jvhcwmuhn21e1",[39m
+[31m               quantity: 2,[39m
+[31m               price: 1299.99[39m
+[31m             }[39m
+[31m           ][39m
+[31m         },[39m
+[31m     ?   id?: String,[39m
+[31m     ?   subtotal?: Float,[39m
+[31m     ?   discount?: Float,[39m
+[31m     ?   status?: OrderStatus,[39m
+[31m     ?   paymentStatus?: PaymentStatus,[39m
+[31m     ?   paymentMethod?: String | Null,[39m
+[31m     ?   stripePaymentId?: String | Null,[39m
+[31m     ?   stripeSessionId?: String | Null,[39m
+[31m     ?   createdAt?: DateTime,[39m
+[31m     ?   updatedAt?: DateTime[39m
+[31m       },[39m
+[31m       include: {[39m
+[31m         orderItems: {[39m
+[31m           include: {[39m
+[31m             product: {[39m
+[31m               select: {[39m
+[31m                 id: true,[39m
+[31m                 name: true,[39m
+[31m                 images: true[39m
+[31m               }[39m
+[31m             }[39m
+[31m           }[39m
+[31m         }[39m
+[31m       }[39m
+[31m     })[39m
+
+[31mUnknown argument `amount`. Available options are marked with ?.[39m

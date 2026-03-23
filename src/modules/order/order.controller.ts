@@ -2,7 +2,7 @@
 import { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
 import { OrderService } from "./order.service";
-import { AuthRequest } from "../../shared/types";
+import { AuthRequest, OrderQueryParams } from "../../shared/types";
 import { errorResponse } from "../../shared/helpers/apiResponse";
 
 const orderService = new OrderService();
@@ -30,25 +30,32 @@ export class OrderController {
     }
   }
 
-  async getOrders(req: AuthRequest, res: Response): Promise<Response> {
-    try {
-      if (!req.user) {
-        return res
-          .status(StatusCodes.UNAUTHORIZED)
-          .json(errorResponse("Authentication required"));
-      }
-
-      // Check if user is admin - if yes, return all orders
-      const userId = req.user.role === "ADMIN" ? undefined : req.user.id;
-
-      const result = await orderService.getOrders(req.query, userId);
-      return res.status(StatusCodes.OK).json(result);
-    } catch (error: any) {
+async getOrders(req: AuthRequest, res: Response): Promise<Response> {
+  try {
+    if (!req.user) {
       return res
-        .status(StatusCodes.INTERNAL_SERVER_ERROR)
-        .json(errorResponse("Failed to get orders", error.message));
+        .status(StatusCodes.UNAUTHORIZED)
+        .json(errorResponse("Authentication required"));
     }
+
+    // Check if user is admin - if yes, return all orders
+    const userId = req.user.role === "ADMIN" ? undefined : req.user.id;
+
+    // Parse query parameters to numbers where needed
+    const queryParams: OrderQueryParams = {
+      ...req.query,
+      page: req.query.page ? parseInt(req.query.page as string) : 1,
+      limit: req.query.limit ? parseInt(req.query.limit as string) : 10,
+    };
+
+    const result = await orderService.getOrders(queryParams, userId);
+    return res.status(StatusCodes.OK).json(result);
+  } catch (error: any) {
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json(errorResponse("Failed to get orders", error.message));
   }
+}
 
   async getOrderById(req: AuthRequest, res: Response): Promise<Response> {
     try {
