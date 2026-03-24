@@ -233,35 +233,44 @@ export class BlogController {
     }
   }
 
-  async uploadCoverImage(req: AuthRequest, res: Response): Promise<Response> {
-    try {
-      if (!req.user) {
-        return res
-          .status(StatusCodes.UNAUTHORIZED)
-          .json(errorResponse("Authentication required"));
-      }
-
-      if (!req.file) {
-        return res
-          .status(StatusCodes.BAD_REQUEST)
-          .json(errorResponse("No file uploaded"));
-      }
-
-      // Handle different file upload services (Cloudinary, local, etc.)
-      const imageUrl = (req.file as any).path || 
-                      (req.file as any).secure_url || 
-                      (req.file as any).location || 
-                      `/uploads/${(req.file as any).filename}`;
-
+ async uploadCoverImage(req: AuthRequest, res: Response): Promise<Response> {
+  try {
+    if (!req.user) {
       return res
-        .status(StatusCodes.OK)
-        .json(
-          successResponse("Image uploaded successfully", { url: imageUrl }),
-        );
-    } catch (error: any) {
-      return res
-        .status(StatusCodes.INTERNAL_SERVER_ERROR)
-        .json(errorResponse("Failed to upload image", error.message));
+        .status(StatusCodes.UNAUTHORIZED)
+        .json(errorResponse("Authentication required"));
     }
+
+    // Debug logging
+    console.log('Upload request received');
+    console.log('req.file:', req.file);
+    console.log('req.body:', req.body);
+    console.log('req.files:', req.files);
+
+    if (!req.file) {
+      return res
+        .status(StatusCodes.BAD_REQUEST)
+        .json(errorResponse("No file uploaded"));
+    }
+
+    // Handle different file upload services (Cloudinary, local, etc.)
+    const imageUrl = (req.file as any).secure_url || 
+                    (req.file as any).path || 
+                    (req.file as any).location || 
+                    `/uploads/${(req.file as any).filename}`;
+
+    console.log('Image URL:', imageUrl);
+
+    return res
+      .status(StatusCodes.OK)
+      .json(
+        successResponse("Image uploaded successfully", { url: imageUrl }),
+      );
+  } catch (error: any) {
+    console.error('Upload error:', error);
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json(errorResponse("Failed to upload image", error.message));
   }
+}
 }

@@ -23,8 +23,20 @@ router.get("/slug/:slug", blogController.getPostBySlug);
 router.post(
   "/upload",
   authenticate,
-  uploadMiddleware.single("coverImage"),
-  blogController.uploadCoverImage,
+  (req, res, next) => {
+    // Check if the file is coming as 'coverImage' or 'image'
+    const uploadHandler = uploadMiddleware.single('coverImage');
+    uploadHandler(req, res, (err) => {
+      if (err && err.message?.includes('Unexpected field')) {
+        // Try with 'image' field name
+        const fallbackHandler = uploadMiddleware.single('image');
+        fallbackHandler(req, res, next);
+      } else {
+        next(err);
+      }
+    });
+  },
+  blogController.uploadCoverImage
 );
 
 // Author/Admin routes
