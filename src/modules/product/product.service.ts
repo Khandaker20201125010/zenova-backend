@@ -288,51 +288,60 @@ export class ProductService {
     }
   }
 
-  async updateProduct(
-    id: string,
-    data: UpdateProductInput,
-  ): Promise<ApiResponse> {
-    try {
-      const product = await prisma.product.findUnique({
-        where: { id },
-      });
+ async updateProduct(
+  id: string,
+  data: UpdateProductInput,
+): Promise<ApiResponse> {
+  try {
+    const product = await prisma.product.findUnique({
+      where: { id },
+    });
 
-      if (!product) {
-        return {
-          success: false,
-          message: "Product not found",
-        };
-      }
-
-      let updateData: any = { ...data };
-      if (data.name && data.name !== product.name) {
-        const slug = data.name
-          .toLowerCase()
-          .replace(/[^a-z0-9]+/g, "-")
-          .replace(/(^-|-$)/g, "");
-
-        updateData.slug = `${slug}-${Date.now()}`;
-      }
-
-      const updatedProduct = await prisma.product.update({
-        where: { id },
-        data: updateData,
-      });
-
-      return {
-        success: true,
-        message: "Product updated successfully",
-        data: updatedProduct,
-      };
-    } catch (error: any) {
-      logger.error("Update product error:", error);
+    if (!product) {
       return {
         success: false,
-        message: "Failed to update product",
-        error: error?.message || "Unknown error",
+        message: "Product not found",
       };
     }
+
+    // Clean up data - remove undefined/null values
+    const updateData: any = { ...data };
+    
+    // Convert empty strings to null for optional fields
+    if (updateData.shortDescription === "") updateData.shortDescription = null;
+    if (updateData.discountedPrice === null || updateData.discountedPrice === "") delete updateData.discountedPrice;
+    if (updateData.seoTitle === null || updateData.seoTitle === "") updateData.seoTitle = null;
+    if (updateData.seoDescription === null || updateData.seoDescription === "") updateData.seoDescription = null;
+    
+    // Handle slug update if name changes
+    if (data.name && data.name !== product.name) {
+      const slug = data.name
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, "");
+
+      updateData.slug = `${slug}-${Date.now()}`;
+    }
+
+    const updatedProduct = await prisma.product.update({
+      where: { id },
+      data: updateData,
+    });
+
+    return {
+      success: true,
+      message: "Product updated successfully",
+      data: updatedProduct,
+    };
+  } catch (error: any) {
+    logger.error("Update product error:", error);
+    return {
+      success: false,
+      message: "Failed to update product",
+      error: error?.message || "Unknown error",
+    };
   }
+}
 
   async deleteProduct(id: string): Promise<ApiResponse> {
     try {

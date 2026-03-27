@@ -6456,3 +6456,21 @@
 [31m     })[39m
 
 [31mUnknown argument `amount`. Available options are marked with ?.[39m
+2026-03-26 22:26:31:2631 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.category.update()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\category\category.service.ts:186:53[39m
+
+[31m  183   updateData.slug = slug;[39m
+[31m  184 }[39m
+[31m  185 [39m
+[31m→ 186 const updatedCategory = await prisma.category.update([39m
+[31mForeign key constraint violated on the constraint: `categories_parentId_fkey`[39m
+2026-03-26 22:26:31:2631 [31merror[39m: [31mUpdate category error: [39m
+[31mInvalid `prisma.category.update()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\category\category.service.ts:186:53[39m
+
+[31m  183   updateData.slug = slug;[39m
+[31m  184 }[39m
+[31m  185 [39m
+[31m→ 186 const updatedCategory = await prisma.category.update([39m
+[31mForeign key constraint violated on the constraint: `categories_parentId_fkey`[39m

@@ -6554,3 +6554,25 @@
 2026-03-24 23:40:51:4051 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
 2026-03-24 23:53:45:5345 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
 2026-03-25 00:06:30:630 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-26 21:52:04:524 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-26 22:21:34:2134 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-26 22:26:31:2631 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.category.update()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\category\category.service.ts:186:53[39m
+
+[31m  183   updateData.slug = slug;[39m
+[31m  184 }[39m
+[31m  185 [39m
+[31m→ 186 const updatedCategory = await prisma.category.update([39m
+[31mForeign key constraint violated on the constraint: `categories_parentId_fkey`[39m
+2026-03-26 22:26:31:2631 [31merror[39m: [31mUpdate category error: [39m
+[31mInvalid `prisma.category.update()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\category\category.service.ts:186:53[39m
+
+[31m  183   updateData.slug = slug;[39m
+[31m  184 }[39m
+[31m  185 [39m
+[31m→ 186 const updatedCategory = await prisma.category.update([39m
+[31mForeign key constraint violated on the constraint: `categories_parentId_fkey`[39m
+2026-03-26 22:37:18:3718 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-27 22:18:03:183 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
