@@ -253,73 +253,81 @@ export class UserService {
     }
   }
 
- async getUsers(params: UserQueryParams): Promise<ApiResponse> {
-  try {
-    const { page = 1, limit = 10, search, role, status, sortBy = "createdAt", sortOrder = "desc" } = params;
-    const skip = (page - 1) * limit;
+  async getUsers(params: UserQueryParams): Promise<ApiResponse> {
+    try {
+      const {
+        page = 1,
+        limit = 10,
+        search,
+        role,
+        status,
+        sortBy = "createdAt",
+        sortOrder = "desc",
+      } = params;
+      const skip = (page - 1) * limit;
 
-    // Build where clause
-    const where: any = {};
+      // Build where clause
+      const where: any = {};
 
-    if (search) {
-      where.OR = [
-        { email: { contains: search, mode: "insensitive" } },
-        { name: { contains: search, mode: "insensitive" } },
-      ];
-    }
+      if (search) {
+        where.OR = [
+          { email: { contains: search, mode: "insensitive" } },
+          { name: { contains: search, mode: "insensitive" } },
+        ];
+      }
 
-    if (role) {
-      where.role = role as Role;
-    }
+      if (role) {
+        where.role = role as Role;
+      }
 
-    if (status) {
-      where.status = status as UserStatus;
-    }
+      if (status) {
+        where.status = status as UserStatus;
+      }
 
-    // Get users and total count
-    const [users, total] = await Promise.all([
-      prisma.user.findMany({
-        where,
-        select: {
-          id: true,
-          email: true,
-          name: true,
-          avatar: true,
-          role: true,
-          status: true,
-          phone: true,
-          company: true,
-          position: true,
-          emailVerified: true,
-          lastLoginAt: true,
-          createdAt: true,
-          updatedAt: true,
+      // Get users and total count
+      const [users, total] = await Promise.all([
+        prisma.user.findMany({
+          where,
+          select: {
+            id: true,
+            email: true,
+            name: true,
+            avatar: true,
+            role: true,
+            status: true,
+            phone: true,
+            company: true,
+            position: true,
+            emailVerified: true,
+            lastLoginAt: true,
+            createdAt: true,
+            updatedAt: true,
+          },
+          skip,
+          take: limit,
+          orderBy: { [sortBy]: sortOrder },
+        }),
+        prisma.user.count({ where }),
+      ]);
+
+      const totalPages = Math.ceil(total / limit);
+
+      return {
+        success: true,
+        message: "Users retrieved successfully",
+        data: {
+          users,
+          total,
+          page,
+          limit,
+          totalPages,
         },
-        skip,
-        take: limit,
-        orderBy: { [sortBy]: sortOrder },
-      }),
-      prisma.user.count({ where }),
-    ]);
-
-    const totalPages = Math.ceil(total / limit);
-
-    return {
-      success: true,
-      message: "Users retrieved successfully",
-      data: {
-        users,
-        total,
-        page,
-        limit,
-        totalPages,
-      },
-    };
-  } catch (error: any) {
-    logger.error("Get users error:", error);
-    throw error;
+      };
+    } catch (error: any) {
+      logger.error("Get users error:", error);
+      throw error;
+    }
   }
-}
 
   async getUserById(userId: string): Promise<ApiResponse> {
     try {
@@ -428,7 +436,6 @@ export class UserService {
         },
       });
 
-      // Log activity
       await prisma.activity.create({
         data: {
           userId,
