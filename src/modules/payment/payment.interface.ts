@@ -10,7 +10,8 @@ export interface CreatePaymentInput {
 export interface PaymentQueryParams {
   page?: number;
   limit?: number;
-  status?: PaymentStatus; // Use enum type
+  search?: string; 
+  status?: PaymentStatus | string; // Use enum type
   startDate?: string;
   endDate?: string;
   userId?: string;

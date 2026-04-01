@@ -12,6 +12,6 @@ export const createPaymentSchema = z.object({
 
 export const updatePaymentStatusSchema = z.object({
   body: z.object({
-    status: z.nativeEnum(PaymentStatus), // Use nativeEnum for Prisma enums
+    status: z.nativeEnum(PaymentStatus), 
   }),
 });

@@ -12,6 +12,7 @@ import { reviewRoutes } from "../../../modules/review/review.routes";
 import { settingsRoutes } from "../../../modules/settings/settings.routes";
 import { dashboardRoutes } from "../../../modules/dashboard/dashboard.routes";
 
+
 // import other feature routes
 
 const router = Router();
@@ -26,8 +27,8 @@ router.use("/contacts", contactRoutes);
 router.use("/blogs", blogRoutes);
 router.use("/categories", categoryRoutes);
 router.use("/reviews", reviewRoutes);
-router.use("settings", settingsRoutes);
-router.use("dashboard", dashboardRoutes);
+router.use("/settings", settingsRoutes);
+router.use("/dashboard", dashboardRoutes);
 // use other feature routes
 
 export default router;

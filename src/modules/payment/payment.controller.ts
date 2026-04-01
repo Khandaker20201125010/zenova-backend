@@ -3,7 +3,7 @@ import { StatusCodes } from "http-status-codes";
 import { PaymentService } from "./payment.service";
 import { AuthRequest } from "../../shared/types";
 import { errorResponse } from "../../shared/helpers/apiResponse";
-import { PaymentStatus } from "@prisma/client"; // Import the enum
+import { PaymentStatus } from "@prisma/client";
 
 const paymentService = new PaymentService();
 
@@ -42,7 +42,14 @@ export class PaymentController {
       // Check if user is admin - if yes, return all payments
       const userId = req.user.role === "ADMIN" ? undefined : req.user.id;
 
-      const result = await paymentService.getPayments(req.query, userId);
+      // Parse query parameters to numbers where needed
+      const queryParams: any = {
+        ...req.query,
+        page: req.query.page ? parseInt(req.query.page as string) : 1,
+        limit: req.query.limit ? parseInt(req.query.limit as string) : 10,
+      };
+
+      const result = await paymentService.getPayments(queryParams, userId);
       return res.status(StatusCodes.OK).json(result);
     } catch (error: any) {
       return res
@@ -59,12 +66,10 @@ export class PaymentController {
           .json(errorResponse("Authentication required"));
       }
 
-      // Fix: Handle string or string[] for id
       const id = Array.isArray(req.params.id)
         ? req.params.id[0]
         : req.params.id;
 
-      // Check if user is admin or owns the payment
       const userId = req.user.role === "ADMIN" ? undefined : req.user.id;
 
       const result = await paymentService.getPaymentById(id, userId);
@@ -92,7 +97,6 @@ export class PaymentController {
           .json(errorResponse("Insufficient permissions"));
       }
 
-      // Fix: Handle string or string[] for id
       const id = Array.isArray(req.params.id)
         ? req.params.id[0]
         : req.params.id;
@@ -120,7 +124,6 @@ export class PaymentController {
           .json(errorResponse("Authentication required"));
       }
 
-      // Check if user is admin - if yes, return all stats
       const userId = req.user.role === "ADMIN" ? undefined : req.user.id;
 
       const result = await paymentService.getPaymentStats(userId);
@@ -140,7 +143,6 @@ export class PaymentController {
           .json(errorResponse("Insufficient permissions"));
       }
 
-      // Fix: Handle string or string[] for id
       const id = Array.isArray(req.params.id)
         ? req.params.id[0]
         : req.params.id;

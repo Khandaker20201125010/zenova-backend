@@ -6578,3 +6578,387 @@
 2026-03-27 22:18:03:183 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
 2026-03-27 22:51:35:5135 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
 2026-03-28 21:50:21:5021 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-28 22:32:15:3215 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-30 22:42:59:4259 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-30 23:19:03:193 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-31 22:40:17:4017 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-31 23:23:04:234 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-03-31 23:23:05:235 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.payment.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\payment\payment.service.ts:95:24[39m
+
+[31m  92 [39m
+[31m  93 // Get payments[39m
+[31m  94 const [payments, total] = await Promise.all([[39m
+[31m→ 95   prisma.payment.findMany({[39m
+[31m         where: {},[39m
+[31m         include: {[39m
+[31m           user: {[39m
+[31m             select: {[39m
+[31m               id: true,[39m
+[31m               name: true,[39m
+[31m               email: true[39m
+[31m             }[39m
+[31m           }[39m
+[31m         },[39m
+[31m         skip: 0,[39m
+[31m         take: "10",[39m
+[31m               ~~~~[39m
+[31m         orderBy: {[39m
+[31m           createdAt: "desc"[39m
+[31m         }[39m
+[31m       })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-31 23:23:05:235 [31merror[39m: [31mGet payments error: [39m
+[31mInvalid `prisma.payment.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\payment\payment.service.ts:95:24[39m
+
+[31m  92 [39m
+[31m  93 // Get payments[39m
+[31m  94 const [payments, total] = await Promise.all([[39m
+[31m→ 95   prisma.payment.findMany({[39m
+[31m         where: {},[39m
+[31m         include: {[39m
+[31m           user: {[39m
+[31m             select: {[39m
+[31m               id: true,[39m
+[31m               name: true,[39m
+[31m               email: true[39m
+[31m             }[39m
+[31m           }[39m
+[31m         },[39m
+[31m         skip: 0,[39m
+[31m         take: "10",[39m
+[31m               ~~~~[39m
+[31m         orderBy: {[39m
+[31m           createdAt: "desc"[39m
+[31m         }[39m
+[31m       })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-31 23:23:05:235 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.payment.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\payment\payment.service.ts:95:24[39m
+
+[31m  92 [39m
+[31m  93 // Get payments[39m
+[31m  94 const [payments, total] = await Promise.all([[39m
+[31m→ 95   prisma.payment.findMany({[39m
+[31m         where: {},[39m
+[31m         include: {[39m
+[31m           user: {[39m
+[31m             select: {[39m
+[31m               id: true,[39m
+[31m               name: true,[39m
+[31m               email: true[39m
+[31m             }[39m
+[31m           }[39m
+[31m         },[39m
+[31m         skip: 0,[39m
+[31m         take: "10",[39m
+[31m               ~~~~[39m
+[31m         orderBy: {[39m
+[31m           createdAt: "desc"[39m
+[31m         }[39m
+[31m       })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-31 23:23:05:235 [31merror[39m: [31mGet payments error: [39m
+[31mInvalid `prisma.payment.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\payment\payment.service.ts:95:24[39m
+
+[31m  92 [39m
+[31m  93 // Get payments[39m
+[31m  94 const [payments, total] = await Promise.all([[39m
+[31m→ 95   prisma.payment.findMany({[39m
+[31m         where: {},[39m
+[31m         include: {[39m
+[31m           user: {[39m
+[31m             select: {[39m
+[31m               id: true,[39m
+[31m               name: true,[39m
+[31m               email: true[39m
+[31m             }[39m
+[31m           }[39m
+[31m         },[39m
+[31m         skip: 0,[39m
+[31m         take: "10",[39m
+[31m               ~~~~[39m
+[31m         orderBy: {[39m
+[31m           createdAt: "desc"[39m
+[31m         }[39m
+[31m       })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-31 23:29:05:295 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.payment.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\payment\payment.service.ts:95:24[39m
+
+[31m  92 [39m
+[31m  93 // Get payments[39m
+[31m  94 const [payments, total] = await Promise.all([[39m
+[31m→ 95   prisma.payment.findMany({[39m
+[31m         where: {},[39m
+[31m         include: {[39m
+[31m           user: {[39m
+[31m             select: {[39m
+[31m               id: true,[39m
+[31m               name: true,[39m
+[31m               email: true[39m
+[31m             }[39m
+[31m           }[39m
+[31m         },[39m
+[31m         skip: 0,[39m
+[31m         take: "10",[39m
+[31m               ~~~~[39m
+[31m         orderBy: {[39m
+[31m           createdAt: "desc"[39m
+[31m         }[39m
+[31m       })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-31 23:29:05:295 [31merror[39m: [31mGet payments error: [39m
+[31mInvalid `prisma.payment.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\payment\payment.service.ts:95:24[39m
+
+[31m  92 [39m
+[31m  93 // Get payments[39m
+[31m  94 const [payments, total] = await Promise.all([[39m
+[31m→ 95   prisma.payment.findMany({[39m
+[31m         where: {},[39m
+[31m         include: {[39m
+[31m           user: {[39m
+[31m             select: {[39m
+[31m               id: true,[39m
+[31m               name: true,[39m
+[31m               email: true[39m
+[31m             }[39m
+[31m           }[39m
+[31m         },[39m
+[31m         skip: 0,[39m
+[31m         take: "10",[39m
+[31m               ~~~~[39m
+[31m         orderBy: {[39m
+[31m           createdAt: "desc"[39m
+[31m         }[39m
+[31m       })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-31 23:29:05:295 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.payment.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\payment\payment.service.ts:95:24[39m
+
+[31m  92 [39m
+[31m  93 // Get payments[39m
+[31m  94 const [payments, total] = await Promise.all([[39m
+[31m→ 95   prisma.payment.findMany({[39m
+[31m         where: {},[39m
+[31m         include: {[39m
+[31m           user: {[39m
+[31m             select: {[39m
+[31m               id: true,[39m
+[31m               name: true,[39m
+[31m               email: true[39m
+[31m             }[39m
+[31m           }[39m
+[31m         },[39m
+[31m         skip: 0,[39m
+[31m         take: "10",[39m
+[31m               ~~~~[39m
+[31m         orderBy: {[39m
+[31m           createdAt: "desc"[39m
+[31m         }[39m
+[31m       })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-31 23:29:05:295 [31merror[39m: [31mGet payments error: [39m
+[31mInvalid `prisma.payment.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\payment\payment.service.ts:95:24[39m
+
+[31m  92 [39m
+[31m  93 // Get payments[39m
+[31m  94 const [payments, total] = await Promise.all([[39m
+[31m→ 95   prisma.payment.findMany({[39m
+[31m         where: {},[39m
+[31m         include: {[39m
+[31m           user: {[39m
+[31m             select: {[39m
+[31m               id: true,[39m
+[31m               name: true,[39m
+[31m               email: true[39m
+[31m             }[39m
+[31m           }[39m
+[31m         },[39m
+[31m         skip: 0,[39m
+[31m         take: "10",[39m
+[31m               ~~~~[39m
+[31m         orderBy: {[39m
+[31m           createdAt: "desc"[39m
+[31m         }[39m
+[31m       })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-31 23:29:19:2919 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.payment.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\payment\payment.service.ts:95:24[39m
+
+[31m  92 [39m
+[31m  93 // Get payments[39m
+[31m  94 const [payments, total] = await Promise.all([[39m
+[31m→ 95   prisma.payment.findMany({[39m
+[31m         where: {},[39m
+[31m         include: {[39m
+[31m           user: {[39m
+[31m             select: {[39m
+[31m               id: true,[39m
+[31m               name: true,[39m
+[31m               email: true[39m
+[31m             }[39m
+[31m           }[39m
+[31m         },[39m
+[31m         skip: 0,[39m
+[31m         take: "10",[39m
+[31m               ~~~~[39m
+[31m         orderBy: {[39m
+[31m           createdAt: "desc"[39m
+[31m         }[39m
+[31m       })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-31 23:29:19:2919 [31merror[39m: [31mGet payments error: [39m
+[31mInvalid `prisma.payment.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\payment\payment.service.ts:95:24[39m
+
+[31m  92 [39m
+[31m  93 // Get payments[39m
+[31m  94 const [payments, total] = await Promise.all([[39m
+[31m→ 95   prisma.payment.findMany({[39m
+[31m         where: {},[39m
+[31m         include: {[39m
+[31m           user: {[39m
+[31m             select: {[39m
+[31m               id: true,[39m
+[31m               name: true,[39m
+[31m               email: true[39m
+[31m             }[39m
+[31m           }[39m
+[31m         },[39m
+[31m         skip: 0,[39m
+[31m         take: "10",[39m
+[31m               ~~~~[39m
+[31m         orderBy: {[39m
+[31m           createdAt: "desc"[39m
+[31m         }[39m
+[31m       })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-31 23:29:21:2921 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.payment.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\payment\payment.service.ts:95:24[39m
+
+[31m  92 [39m
+[31m  93 // Get payments[39m
+[31m  94 const [payments, total] = await Promise.all([[39m
+[31m→ 95   prisma.payment.findMany({[39m
+[31m         where: {},[39m
+[31m         include: {[39m
+[31m           user: {[39m
+[31m             select: {[39m
+[31m               id: true,[39m
+[31m               name: true,[39m
+[31m               email: true[39m
+[31m             }[39m
+[31m           }[39m
+[31m         },[39m
+[31m         skip: 0,[39m
+[31m         take: "10",[39m
+[31m               ~~~~[39m
+[31m         orderBy: {[39m
+[31m           createdAt: "desc"[39m
+[31m         }[39m
+[31m       })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-31 23:29:21:2921 [31merror[39m: [31mGet payments error: [39m
+[31mInvalid `prisma.payment.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\payment\payment.service.ts:95:24[39m
+
+[31m  92 [39m
+[31m  93 // Get payments[39m
+[31m  94 const [payments, total] = await Promise.all([[39m
+[31m→ 95   prisma.payment.findMany({[39m
+[31m         where: {},[39m
+[31m         include: {[39m
+[31m           user: {[39m
+[31m             select: {[39m
+[31m               id: true,[39m
+[31m               name: true,[39m
+[31m               email: true[39m
+[31m             }[39m
+[31m           }[39m
+[31m         },[39m
+[31m         skip: 0,[39m
+[31m         take: "10",[39m
+[31m               ~~~~[39m
+[31m         orderBy: {[39m
+[31m           createdAt: "desc"[39m
+[31m         }[39m
+[31m       })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-31 23:29:22:2922 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.payment.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\payment\payment.service.ts:95:24[39m
+
+[31m  92 [39m
+[31m  93 // Get payments[39m
+[31m  94 const [payments, total] = await Promise.all([[39m
+[31m→ 95   prisma.payment.findMany({[39m
+[31m         where: {},[39m
+[31m         include: {[39m
+[31m           user: {[39m
+[31m             select: {[39m
+[31m               id: true,[39m
+[31m               name: true,[39m
+[31m               email: true[39m
+[31m             }[39m
+[31m           }[39m
+[31m         },[39m
+[31m         skip: 0,[39m
+[31m         take: "10",[39m
+[31m               ~~~~[39m
+[31m         orderBy: {[39m
+[31m           createdAt: "desc"[39m
+[31m         }[39m
+[31m       })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-31 23:29:22:2922 [31merror[39m: [31mGet payments error: [39m
+[31mInvalid `prisma.payment.findMany()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\payment\payment.service.ts:95:24[39m
+
+[31m  92 [39m
+[31m  93 // Get payments[39m
+[31m  94 const [payments, total] = await Promise.all([[39m
+[31m→ 95   prisma.payment.findMany({[39m
+[31m         where: {},[39m
+[31m         include: {[39m
+[31m           user: {[39m
+[31m             select: {[39m
+[31m               id: true,[39m
+[31m               name: true,[39m
+[31m               email: true[39m
+[31m             }[39m
+[31m           }[39m
+[31m         },[39m
+[31m         skip: 0,[39m
+[31m         take: "10",[39m
+[31m               ~~~~[39m
+[31m         orderBy: {[39m
+[31m           createdAt: "desc"[39m
+[31m         }[39m
+[31m       })[39m
+
+[31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
+2026-03-31 23:38:12:3812 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m

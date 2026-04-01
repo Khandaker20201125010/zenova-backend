@@ -3,67 +3,68 @@ import logger from "../../shared/helpers/logger";
 import { prisma } from "../../shared/helpers/prisma";
 import { ApiResponse } from "../../shared/types";
 import { CreatePaymentInput, PaymentQueryParams } from "./payment.interface";
-import { PaymentStatus } from "@prisma/client"; // Import the enum
+import { PaymentStatus } from "@prisma/client";
 
 export class PaymentService {
-  async createPaymentIntent(
-    userId: string,
-    data: CreatePaymentInput,
-  ): Promise<ApiResponse> {
-    try {
-      const paymentIntent = await stripe.paymentIntents.create({
-        amount: Math.round(data.amount * 100),
+ async createPaymentIntent(
+  userId: string,
+  data: CreatePaymentInput,
+): Promise<ApiResponse> {
+  try {
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: Math.round(data.amount * 100),
+      currency: data.currency || "usd",
+      metadata: {
+        userId,
+        orderId: data.orderId || "",
+        description: data.description || "",
+      },
+    });
+
+    const payment = await prisma.payment.create({
+      data: {
+        userId,
+        amount: data.amount,
         currency: data.currency || "usd",
-        metadata: {
-          userId,
-          orderId: data.orderId || "",
-          description: data.description || "",
-        },
-      });
+        status: PaymentStatus.PENDING,
+        stripePaymentId: paymentIntent.id,
+        description: data.description,
+        orderId: data.orderId, 
+      },
+    });
 
-      // Create payment record
-      const payment = await prisma.payment.create({
-        data: {
-          userId,
-          amount: data.amount,
-          currency: data.currency || "usd",
-          status: PaymentStatus.PENDING, // Use enum
-          stripePaymentId: paymentIntent.id,
-          description: data.description,
-        },
-      });
-
-      return {
-        success: true,
-        message: "Payment intent created",
-        data: {
-          payment,
-          clientSecret: paymentIntent.client_secret,
-        },
-      };
-    } catch (error: any) {
-      // Fix error type
-      logger.error("Create payment intent error:", error);
-      throw error;
-    }
+    return {
+      success: true,
+      message: "Payment intent created",
+      data: {
+        payment,
+        clientSecret: paymentIntent.client_secret,
+      },
+    };
+  } catch (error: any) {
+    logger.error("Create payment intent error:", error);
+    throw error;
   }
+}
 
   async getPayments(
     params: PaymentQueryParams,
     userId?: string,
   ): Promise<ApiResponse> {
     try {
+      // Parse numeric values properly
+      const page = Math.max(1, Number(params.page) || 1);
+      const limit = Math.min(100, Math.max(1, Number(params.limit) || 10));
+      const skip = (page - 1) * limit;
+
       const {
-        page = 1,
-        limit = 10,
         status,
         startDate,
         endDate,
+        search,
         sortBy = "createdAt",
         sortOrder = "desc",
       } = params;
-
-      const skip = (page - 1) * limit;
 
       // Build where clause
       const where: any = {};
@@ -72,15 +73,12 @@ export class PaymentService {
         where.userId = userId;
       }
 
-      if (status) {
-        // Validate status is a valid PaymentStatus enum
-        if (Object.values(PaymentStatus).includes(status as PaymentStatus)) {
-          where.status = status;
-        } else {
-          return {
-            success: false,
-            message: `Invalid status. Must be one of: ${Object.values(PaymentStatus).join(", ")}`,
-          };
+      // Handle status filtering - only if status is a valid enum value
+      if (status && status !== "all" && status !== "") {
+        // Check if status is a valid PaymentStatus enum value
+        const validStatuses = Object.values(PaymentStatus) as string[];
+        if (validStatuses.includes(status)) {
+          where.status = status as PaymentStatus;
         }
       }
 
@@ -88,6 +86,15 @@ export class PaymentService {
         where.createdAt = {};
         if (startDate) where.createdAt.gte = new Date(startDate);
         if (endDate) where.createdAt.lte = new Date(endDate);
+      }
+
+      // Handle search
+      if (search && search.trim() !== "") {
+        where.OR = [
+          { user: { name: { contains: search, mode: "insensitive" } } },
+          { user: { email: { contains: search, mode: "insensitive" } } },
+          { stripePaymentId: { contains: search, mode: "insensitive" } },
+        ];
       }
 
       // Get payments
@@ -100,6 +107,7 @@ export class PaymentService {
                 id: true,
                 name: true,
                 email: true,
+                avatar: true,
               },
             },
           },
@@ -124,9 +132,12 @@ export class PaymentService {
         },
       };
     } catch (error: any) {
-      // Fix error type
       logger.error("Get payments error:", error);
-      throw error;
+      return {
+        success: false,
+        message: "Failed to get payments",
+        error: error?.message || "Unknown error",
+      };
     }
   }
 
@@ -146,6 +157,7 @@ export class PaymentService {
               id: true,
               name: true,
               email: true,
+              avatar: true,
             },
           },
         },
@@ -164,19 +176,23 @@ export class PaymentService {
         data: payment,
       };
     } catch (error: any) {
-      // Fix error type
       logger.error("Get payment by ID error:", error);
-      throw error;
+      return {
+        success: false,
+        message: "Failed to get payment",
+        error: error?.message || "Unknown error",
+      };
     }
   }
 
   async updatePaymentStatus(id: string, status: string): Promise<ApiResponse> {
     try {
       // Validate status is a valid PaymentStatus enum
-      if (!Object.values(PaymentStatus).includes(status as PaymentStatus)) {
+      const validStatuses = Object.values(PaymentStatus) as string[];
+      if (!validStatuses.includes(status)) {
         return {
           success: false,
-          message: `Invalid status. Must be one of: ${Object.values(PaymentStatus).join(", ")}`,
+          message: `Invalid status. Must be one of: ${validStatuses.join(", ")}`,
         };
       }
 
@@ -193,10 +209,10 @@ export class PaymentService {
 
       const updatedPayment = await prisma.payment.update({
         where: { id },
-        data: { status: status as PaymentStatus }, // Cast to enum
+        data: { status: status as PaymentStatus },
       });
 
-      // Log activity
+      // Log activity for successful payments
       if (status === PaymentStatus.PAID) {
         await prisma.activity.create({
           data: {
@@ -211,7 +227,6 @@ export class PaymentService {
           },
         });
 
-        // Create notification
         await prisma.notification.create({
           data: {
             userId: payment.userId,
@@ -229,9 +244,12 @@ export class PaymentService {
         data: updatedPayment,
       };
     } catch (error: any) {
-      // Fix error type
       logger.error("Update payment status error:", error);
-      throw error;
+      return {
+        success: false,
+        message: "Failed to update payment status",
+        error: error?.message || "Unknown error",
+      };
     }
   }
 
@@ -248,6 +266,7 @@ export class PaymentService {
         successfulPayments,
         failedPayments,
         pendingPayments,
+        refundedPayments,
         recentPayments,
       ] = await Promise.all([
         prisma.payment.count({ where }),
@@ -264,19 +283,34 @@ export class PaymentService {
         prisma.payment.count({
           where: { ...where, status: PaymentStatus.PENDING },
         }),
+        prisma.payment.count({
+          where: { ...where, status: PaymentStatus.REFUNDED },
+        }),
         prisma.payment.findMany({
           where: { ...where, status: PaymentStatus.PAID },
           orderBy: { createdAt: "desc" },
           take: 5,
+          include: {
+            user: {
+              select: {
+                id: true,
+                name: true,
+                email: true,
+                avatar: true,
+              },
+            },
+          },
         }),
       ]);
 
       const stats = {
         totalPayments,
-        totalAmount: totalAmount._sum.amount || 0,
+        totalRevenue: totalAmount._sum.amount || 0,
         successfulPayments,
         failedPayments,
         pendingPayments,
+        refundedPayments,
+        successRate: totalPayments > 0 ? (successfulPayments / totalPayments) * 100 : 0,
         recentPayments,
       };
 
@@ -286,9 +320,12 @@ export class PaymentService {
         data: stats,
       };
     } catch (error: any) {
-      // Fix error type
       logger.error("Get payment stats error:", error);
-      throw error;
+      return {
+        success: false,
+        message: "Failed to get payment stats",
+        error: error?.message || "Unknown error",
+      };
     }
   }
 
@@ -320,7 +357,7 @@ export class PaymentService {
       // Update payment status
       const updatedPayment = await prisma.payment.update({
         where: { id },
-        data: { status: PaymentStatus.REFUNDED }, // Use enum
+        data: { status: PaymentStatus.REFUNDED },
       });
 
       // Log activity
@@ -358,9 +395,12 @@ export class PaymentService {
         },
       };
     } catch (error: any) {
-      // Fix error type
       logger.error("Refund payment error:", error);
-      throw error;
+      return {
+        success: false,
+        message: "Failed to refund payment",
+        error: error?.message || "Unknown error",
+      };
     }
   }
 }
