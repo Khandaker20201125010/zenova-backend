@@ -46,6 +46,53 @@ export class PaymentService {
     throw error;
   }
 }
+async confirmPaymentIntent(
+  userId: string,
+  paymentIntentId: string,
+): Promise<ApiResponse> {
+  try {
+    // Verify payment belongs to user
+    const existingPayment = await prisma.payment.findFirst({
+      where: {
+        stripePaymentId: paymentIntentId,
+        userId: userId,
+      },
+    });
+
+    if (!existingPayment) {
+      return {
+        success: false,
+        message: "Payment not found",
+      };
+    }
+
+    // Get frontend URL with fallback
+    const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
+    
+    // Confirm with Stripe
+    const paymentIntent = await stripe.paymentIntents.confirm(paymentIntentId, {
+      payment_method: 'pm_card_visa',
+      return_url: `${frontendUrl}/payment/success`,
+    });
+
+    // If payment succeeded immediately, update status
+    if (paymentIntent.status === 'succeeded') {
+      await this.updatePaymentStatus(existingPayment.id, PaymentStatus.PAID);
+    }
+
+    return {
+      success: true,
+      message: "Payment confirmed",
+      data: paymentIntent,
+    };
+  } catch (error: any) {
+    logger.error("Confirm payment error:", error);
+    return {
+      success: false,
+      message: error.message,
+    };
+  }
+}
 
   async getPayments(
     params: PaymentQueryParams,

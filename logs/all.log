@@ -6962,3 +6962,26 @@
 
 [31mArgument `take`: Invalid value provided. Expected Int, provided String.[39m
 2026-03-31 23:38:12:3812 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-04-01 22:40:23:4023 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-04-02 22:16:03:163 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-04-02 22:25:20:2520 [31merror[39m: [31mPrisma Error: [39m
+[31mInvalid `prisma.product.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:30:44[39m
+
+[31m  27   finalName = `${data.name} (${new Date().toLocaleDateString()})`;[39m
+[31m  28 }[39m
+[31m  29 [39m
+[31m→ 30 const product = await prisma.product.create([39m
+[31mForeign key constraint violated on the constraint: `products_categoryId_fkey`[39m
+2026-04-02 22:25:20:2520 [31merror[39m: [31mCreate product error: [39m
+[31mInvalid `prisma.product.create()` invocation in[39m
+[31mC:\projects\zenova-backend\src\modules\product\product.service.ts:30:44[39m
+
+[31m  27   finalName = `${data.name} (${new Date().toLocaleDateString()})`;[39m
+[31m  28 }[39m
+[31m  29 [39m
+[31m→ 30 const product = await prisma.product.create([39m
+[31mForeign key constraint violated on the constraint: `products_categoryId_fkey`[39m
+2026-04-02 23:08:25:825 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m
+2026-04-02 23:12:36:1236 [31merror[39m: [31mConfirm payment error: Invalid URL: An explicit scheme (such as https) must be provided.[39m
+2026-04-02 23:15:02:152 [32minfo[39m: [32mPrisma Info: Starting a postgresql pool with 9 connections.[39m

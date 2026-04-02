@@ -17,6 +17,11 @@ router.post(
   validate(createPaymentSchema),
   paymentController.createPaymentIntent,
 );
+router.post(
+  "/confirm",
+  authenticate,
+  paymentController.confirmPaymentIntent,
+);
 router.get("/user", authenticate, paymentController.getPayments);
 router.get("/stats", authenticate, paymentController.getPaymentStats);
 router.get("/:id", authenticate, paymentController.getPaymentById);

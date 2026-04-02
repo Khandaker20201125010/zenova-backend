@@ -1,9 +1,9 @@
-import { Request, Response } from "express";
+import {  Response } from "express";
 import { StatusCodes } from "http-status-codes";
 import { PaymentService } from "./payment.service";
 import { AuthRequest } from "../../shared/types";
 import { errorResponse } from "../../shared/helpers/apiResponse";
-import { PaymentStatus } from "@prisma/client";
+
 
 const paymentService = new PaymentService();
 
@@ -28,6 +28,42 @@ export class PaymentController {
       return res
         .status(StatusCodes.INTERNAL_SERVER_ERROR)
         .json(errorResponse("Failed to create payment intent", error.message));
+    }
+  }
+
+   async confirmPaymentIntent(
+    req: AuthRequest,
+    res: Response,
+  ): Promise<Response> {
+    try {
+      if (!req.user) {
+        return res
+          .status(StatusCodes.UNAUTHORIZED)
+          .json(errorResponse("Authentication required"));
+      }
+
+      const { paymentIntentId } = req.body;
+      
+      if (!paymentIntentId) {
+        return res
+          .status(StatusCodes.BAD_REQUEST)
+          .json(errorResponse("paymentIntentId is required"));
+      }
+
+      const result = await paymentService.confirmPaymentIntent(
+        req.user.id,
+        paymentIntentId,
+      );
+
+      if (!result.success) {
+        return res.status(StatusCodes.BAD_REQUEST).json(result);
+      }
+
+      return res.status(StatusCodes.OK).json(result);
+    } catch (error: any) {
+      return res
+        .status(StatusCodes.INTERNAL_SERVER_ERROR)
+        .json(errorResponse("Failed to confirm payment", error.message));
     }
   }
 
